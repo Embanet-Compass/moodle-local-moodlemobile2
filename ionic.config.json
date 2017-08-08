@@ -5,6 +5,8 @@
     "www/**/*.html",
     "www/build/**/*",
     "www/index.html",
-    "!www/lib/**/*"
-  ]
+    "!www/lib/**/*",
+    "scss/**/*"
+  ],
+  "type": "ionic1"
 }
