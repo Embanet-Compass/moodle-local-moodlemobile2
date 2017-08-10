@@ -5,6 +5,7 @@
 $black: 		rgb(0,0,0);
 $white: 		rgb(255,255,255);
 $link: 			rgb(46,157,247);
+$primary: 		rgb(0,135,167);
 $pearson: 		rgb(0,135,167);
 $pearsonDark: 	darken($pearson,10%);
 $error: 		rgb(221,19,33);
@@ -20,7 +21,7 @@ $grey5: 		rgb(243,243,243);
 $disabled:		rgba($white,0.54);
 
 // School Colors
-$primary: 		rgb(204,0,0);
+$primaryCustom: 		rgb(204,0,0);
 $secondary: 	rgb(97,84,69);
 $primaryDark: 	darken($primary,10%);
 $primaryLight: 	rgba($primary,0.04);
