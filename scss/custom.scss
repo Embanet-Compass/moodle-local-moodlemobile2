@@ -1,0 +1,225 @@
+/*----------Typography
+*/
+
+// App
+html {
+	font-size: 62.5%;	// 10px = 1em
+    line-height: 1.3;	// Default
+	font-weight: 400;   // Normal
+	font-family: $font-stack;
+	letter-spacing: 0.3px;
+	color: $black;
+}
+
+.center {
+	text-align: center;
+}
+
+.right {
+	text-align: right;
+}
+
+.disabled {
+	opacity: 0.54;
+}
+
+a {
+	text-decoration: none;
+	font-weight: inherit;
+	color: $link;
+}
+
+.button {
+	width: 100%;
+	padding: 15px;
+	font-size: 1.6em;
+	text-align: center;
+	color: $link;
+	background: none;
+	border: 1px solid $link;
+	border-radius: 4px;
+
+	&:active,
+	&.primary {
+		color: $white;
+		background: $link;
+		border: 1px solid $link;
+	}
+
+	&:disabled,
+	&.disabled {
+		opacity: 0.54;
+	}
+}
+
+.overflow {
+	font-size: 1.6em;
+	font-weight: 500;
+	color: $black;
+}
+
+//Navigation
+.navTitle {
+	font-size: 1.7em;
+	font-weight: 500;
+	text-align: center;
+	color: $white;
+}
+
+.navButton {
+	font-size: 1.7em;
+	font-weight: 500;
+	color: $white;
+}
+
+.navButtonStrong {
+	font-size: 1.7em;
+	font-weight: 400;
+	color: $white;
+}
+
+.drawerTitle {
+	font-size: 1.6em;
+	font-weight: 500;
+	color: $white;
+}
+
+.drawerSubtitle {
+	font-size: 1.4em;
+	font-weight: 300;
+	color: $white;
+}
+
+// Onboarding
+.tourTitle {
+	font-size: 1.8em;
+	font-weight: 500;
+	color: $black;
+}
+
+.progress {
+	font-size: 1.4em;
+	color: $grey1;
+}
+
+// Inputs
+.inputLabel {
+	font-size: 1.6em;
+	color: $black;
+}
+
+.inputPlaceholder {
+	font-size: 1.4em;
+	color: $grey2;
+}
+
+.input {
+	font-size: 1.4em;
+	color: $black;
+}
+
+//Screens
+.instruction {
+	font-size: 1.4em;
+	text-align: center;
+	color: $grey1;
+}
+
+.cardTitle {
+	font-size: 1.6em;
+	font-weight: 500;
+	color: $black;
+}
+
+.list {
+	font-size: 1.6em;
+	color: $black;
+
+	&.strong {
+		font-weight: 500;
+	}
+}
+
+.listDetail {
+	font-size: 1.4em;
+	color: $grey2;
+}
+
+.header {
+	font-size: 1.6em;
+	color: $black;
+}
+
+.detail {
+	font-size: 1.4em;
+	color: $grey1;
+}
+
+.paragraph {
+	font-size: 1.6em;
+	color: $black;
+}
+
+.paragraphSmall {
+	font-size: 1.4em;
+	color: $black;
+}
+
+
+// Community
+
+
+// Resources
+
+
+// Empty
+.emptyTitle {
+	font-size: 1.6em;
+	font-weight: 500;
+	text-align: center;
+	color: $grey2;
+}
+
+.emptySubitle {
+	font-size: 1.4em;
+	text-align: center;
+	color: $grey2;
+}
+
+
+/*----------Overrides
+*/
+
+.mm-bglogo {
+	background-color: $pearson; /* Change this to add a bg image or change color */
+	background: -webkit-radial-gradient($pearson, $pearsonDark);
+	background: radial-gradient($pearson, $pearsonDark);
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	display: table;
+}
+
+.bar-content,
+.bar-side-menu {
+	background-color: $primary;
+}
+
+.mm-side-menu-left {
+
+	.item {
+		background: $primary!important;
+		color: $white!important;
+		border-color: $primaryDark!important;
+	}
+
+	.item-divider {
+		background: $primaryDark!important;
+	}
+}

@@ -1,0 +1,372 @@
+/*----------Icon Font
+*/
+
+$icon-add-circle: "\e900";
+$icon-add: "\e901";
+$icon-advisor: "\e902";
+$icon-alert: "\e903";
+$icon-bookmark-full: "\e904";
+$icon-bookmark: "\e905";
+$icon-calendar: "\e906";
+$icon-call: "\e907";
+$icon-campus: "\e908";
+$icon-categories: "\e909";
+$icon-check-empty: "\e90a";
+$icon-check-full: "\e90b";
+$icon-community: "\e90c";
+$icon-courses: "\e90d";
+$icon-credit: "\e90e";
+$icon-department: "\e90f";
+$icon-diploma: "\e910";
+$icon-disclosure: "\e911";
+$icon-edit: "\e912";
+$icon-email: "\e913";
+$icon-essentials: "\e914";
+$icon-expand-down: "\e915";
+$icon-expand-up: "\e916";
+$icon-facebook: "\e917";
+$icon-filter-clear: "\e918";
+$icon-filter: "\e919";
+$icon-homework: "\e91a";
+$icon-image: "\e91b";
+$icon-insights: "\e91c";
+$icon-instagram: "\e91d";
+$icon-link: "\e91e";
+$icon-linkedin: "\e91f";
+$icon-mark: "\e920";
+$icon-menu: "\e921";
+$icon-messages: "\e922";
+$icon-mood: "\e923";
+$icon-news: "\e924";
+$icon-overflow: "\e925";
+$icon-participant: "\e926";
+$icon-post: "\e927";
+$icon-program: "\e928";
+$icon-remove: "\e929";
+$icon-reply: "\e92a";
+$icon-resources: "\e92b";
+$icon-search: "\e92c";
+$icon-settings: "\e92d";
+$icon-share: "\e92e";
+$icon-sign-out: "\e92f";
+$icon-sms: "\e930";
+$icon-star-empty: "\e931";
+$icon-star-small: "\e932";
+$icon-student: "\e933";
+$icon-students: "\e934";
+$icon-test: "\e935";
+$icon-title: "\e936";
+$icon-twitter: "\e937";
+$icon-website: "\e938";
+
+@font-face {
+  font-family: 'Pearson';
+  src:  url('../fonts/Pearson.eot');
+  src:  url('../fonts/Pearson.eot') format('embedded-opentype'),
+    url('../fonts/Pearson.ttf') format('truetype'),
+    url('../fonts/Pearson.woff') format('woff'),
+    url('../fonts/Pearson.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'Pearson' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-add-circle {
+  &:before {
+    content: $icon-add-circle;
+  }
+}
+.icon-add {
+  &:before {
+    content: $icon-add;
+  }
+}
+.icon-advisor {
+  &:before {
+    content: $icon-advisor;
+  }
+}
+.icon-alert {
+  &:before {
+    content: $icon-alert;
+  }
+}
+.icon-bookmark-full {
+  &:before {
+    content: $icon-bookmark-full;
+  }
+}
+.icon-bookmark {
+  &:before {
+    content: $icon-bookmark;
+  }
+}
+.icon-calendar {
+  &:before {
+    content: $icon-calendar;
+  }
+}
+.icon-call {
+  &:before {
+    content: $icon-call;
+  }
+}
+.icon-campus {
+  &:before {
+    content: $icon-campus;
+  }
+}
+.icon-categories {
+  &:before {
+    content: $icon-categories;
+  }
+}
+.icon-check-empty {
+  &:before {
+    content: $icon-check-empty;
+  }
+}
+.icon-check-full {
+  &:before {
+    content: $icon-check-full;
+  }
+}
+.icon-community {
+  &:before {
+    content: $icon-community;
+  }
+}
+.icon-courses {
+  &:before {
+    content: $icon-courses;
+  }
+}
+.icon-credit {
+  &:before {
+    content: $icon-credit;
+  }
+}
+.icon-department {
+  &:before {
+    content: $icon-department;
+  }
+}
+.icon-diploma {
+  &:before {
+    content: $icon-diploma;
+  }
+}
+.icon-disclosure {
+  &:before {
+    content: $icon-disclosure;
+  }
+}
+.icon-edit {
+  &:before {
+    content: $icon-edit;
+  }
+}
+.icon-email {
+  &:before {
+    content: $icon-email;
+  }
+}
+.icon-essentials {
+  &:before {
+    content: $icon-essentials;
+  }
+}
+.icon-expand-down {
+  &:before {
+    content: $icon-expand-down;
+  }
+}
+.icon-expand-up {
+  &:before {
+    content: $icon-expand-up;
+  }
+}
+.icon-facebook {
+  &:before {
+    content: $icon-facebook;
+  }
+}
+.icon-filter-clear {
+  &:before {
+    content: $icon-filter-clear;
+  }
+}
+.icon-filter {
+  &:before {
+    content: $icon-filter;
+  }
+}
+.icon-homework {
+  &:before {
+    content: $icon-homework;
+  }
+}
+.icon-image {
+  &:before {
+    content: $icon-image;
+  }
+}
+.icon-insights {
+  &:before {
+    content: $icon-insights;
+  }
+}
+.icon-instagram {
+  &:before {
+    content: $icon-instagram;
+  }
+}
+.icon-link {
+  &:before {
+    content: $icon-link;
+  }
+}
+.icon-linkedin {
+  &:before {
+    content: $icon-linkedin;
+  }
+}
+.icon-mark {
+  &:before {
+    content: $icon-mark;
+  }
+}
+.icon-menu {
+  &:before {
+    content: $icon-menu;
+  }
+}
+.icon-messages {
+  &:before {
+    content: $icon-messages;
+  }
+}
+.icon-mood {
+  &:before {
+    content: $icon-mood;
+  }
+}
+.icon-news {
+  &:before {
+    content: $icon-news;
+  }
+}
+.icon-overflow {
+  &:before {
+    content: $icon-overflow;
+  }
+}
+.icon-participant {
+  &:before {
+    content: $icon-participant;
+  }
+}
+.icon-post {
+  &:before {
+    content: $icon-post;
+  }
+}
+.icon-program {
+  &:before {
+    content: $icon-program;
+  }
+}
+.icon-remove {
+  &:before {
+    content: $icon-remove;
+  }
+}
+.icon-reply {
+  &:before {
+    content: $icon-reply;
+  }
+}
+.icon-resources {
+  &:before {
+    content: $icon-resources;
+  }
+}
+.icon-search {
+  &:before {
+    content: $icon-search;
+  }
+}
+.icon-settings {
+  &:before {
+    content: $icon-settings;
+  }
+}
+.icon-share {
+  &:before {
+    content: $icon-share;
+  }
+}
+.icon-sign-out {
+  &:before {
+    content: $icon-sign-out;
+  }
+}
+.icon-sms {
+  &:before {
+    content: $icon-sms;
+  }
+}
+.icon-star-empty {
+  &:before {
+    content: $icon-star-empty;
+  }
+}
+.icon-star-small {
+  &:before {
+    content: $icon-star-small;
+  }
+}
+.icon-student {
+  &:before {
+    content: $icon-student;
+  }
+}
+.icon-students {
+  &:before {
+    content: $icon-students;
+  }
+}
+.icon-test {
+  &:before {
+    content: $icon-test;
+  }
+}
+.icon-title {
+  &:before {
+    content: $icon-title;
+  }
+}
+.icon-twitter {
+  &:before {
+    content: $icon-twitter;
+  }
+}
+.icon-website {
+  &:before {
+    content: $icon-website;
+  }
+}
