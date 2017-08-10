@@ -37,8 +37,14 @@ $royal:			rgb(120,59,210);
 $dark:			$grey0;
 $orange:		$primary;
 
+
 // Fonts
 $font-stack: 'Helvetica Neue', HelveticaNeue, 'Helvetica', Helvetica, sans-serif;
+
+html,
+body {
+	font-family: $font-stack;
+}
 
 /*----------Moodle Color Overrides
 */

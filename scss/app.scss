@@ -192,6 +192,9 @@ $ionicons-font-path: "../lib/ionic/release/fonts" !default;
 // Include custom variables.
 @import "variables.scss";
 
+// Include custom variables.
+@import "icon-font.scss";
+
 // Include all of Moodle Mobile.
 @import "www/build/mm.bundle.scss";
 
