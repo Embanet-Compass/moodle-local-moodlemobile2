@@ -1,0 +1,77 @@
+/*----------Variables
+*/
+
+// Generic Colors
+$black: 		rgb(0,0,0);
+$white: 		rgb(255,255,255);
+$link: 			rgb(46,157,247);
+$primary: 		rgb(0,135,167);
+$pearson: 		rgb(0,135,167);
+$pearsonDark: 	darken($pearson,10%);
+$error: 		rgb(221,19,33);
+$warning: 		rgb(253,184,18);
+$success: 		rgb(0,171,108);
+$successLight: 	rgba($success,0.04);
+$grey0: 		rgb(68,68,68);
+$grey1: 		rgb(102,102,102);
+$grey2: 		rgb(153,153,153);
+$grey3: 		rgb(221,221,221);
+$grey4: 		rgb(238,238,238);
+$grey5: 		rgb(243,243,243);
+$disabled:		rgba($white,0.54);
+
+// School Colors
+$primaryCustom: 		rgb(204,0,0);
+$secondary: 	rgb(97,84,69);
+$primaryDark: 	darken($primary,10%);
+$primaryLight: 	rgba($primary,0.04);
+
+// Ionic Overrides
+$light:			$white;
+$stable:		$grey5;
+$positive:		$link;
+$calm:			$link;
+$balanced:		$success;
+$energized:		$warning;
+$assertive:		$error;
+$royal:			rgb(120,59,210);
+$dark:			$grey0;
+$orange:		$primary;
+
+
+// Fonts
+$font-stack: 'Helvetica Neue', HelveticaNeue, 'Helvetica', Helvetica, sans-serif;
+
+html,
+body {
+	font-family: $font-stack;
+}
+
+/*----------Moodle Color Overrides
+*/
+
+$mm-color:          $primary;
+$mm-color-light:    lighten($primary, 10%);
+$mm-color-dark:     darken($primary, 10%);
+
+$mm-buttons-color: $link;
+
+// Change Ionic default elements colors.
+$base-color: $black !default;
+$base-background-color: $gray-light !default;
+
+$item-default-text: $black;
+$sheet-options-text-color: $positive;
+
+// Header.
+$bar-content-bg: $mm-color !default;
+$bar-content-border: transparent !default;
+$bar-content-text: $white !default;
+
+$item-default-bg: $white;
+$item-divider-bg: $grey4;
+$item-disabled-color: $grey2 !default;
+
+$button-light-border: $grey3;
+
+$toggle-on-default-bg: $primary;

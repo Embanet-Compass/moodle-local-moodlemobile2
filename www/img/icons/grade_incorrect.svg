@@ -1,14 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
-	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
-]>
-<svg version="1.1"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-	 x="0px" y="0px" width="16px" height="16px" viewBox="-1.6 -0.5 16 16"
-	 style="overflow:visible;enable-background:new -1.6 -0.5 16 16;" xml:space="preserve" preserveAspectRatio="xMinYMid meet">
-<defs>
-</defs>
-<path style="fill:#FF403C;" d="M12.8,2.7L10.1,0c0,0-1.6,1.5-3.7,4C4.3,1.5,2.7,0,2.7,0L0,2.7c0,0,1.9,1.3,4.6,3.7
-	C3,8.7,1.3,11.6,0,14.9C2.2,12.2,4.4,9.9,6.4,8c2,1.9,4.2,4.2,6.4,6.9c-1.3-3.3-3-6.2-4.6-8.6C10.9,4,12.8,2.7,12.8,2.7z"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>grade_incorrect</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="grade_incorrect">
+            <g>
+                <rect id="Rectangle-2" x="0" y="0" width="18" height="18"></rect>
+                <polygon id="Page-1" stroke="#EC2C22" fill="#EC2C22" points="13.7914286 3 9 7.79142857 4.20857143 3 3 4.20857143 7.79142857 9 3 13.7914286 4.20857143 15 9 10.2085714 13.7914286 15 15 13.7914286 10.2085714 9 15 4.20857143"></polygon>
+            </g>
+        </g>
+    </g>
 </svg>
