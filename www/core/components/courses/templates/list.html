@@ -13,10 +13,17 @@
                     <input type="text" placeholder="{{ 'mm.courses.filtermycourses' | translate}}" ng-model="filter.filterText">
                 </ion-input>
             </div>
-            <mm-course-list-progress ng-repeat="course in courses | filter:{fullname: filter.filterText}" course="course" show-summary="true">fff</mm-course-list-progress>
+            <mm-course-list-progress ng-repeat="course in courses | filter:{fullname: filter.filterText}" course="course" show-summary="true"></mm-course-list-progress>
             <mm-empty-box ng-if="!courses || !courses.length" icon="ion-ionic" message="{{ 'mm.courses.nocourses' | translate }}">
                 <p ng-if="searchEnabled">{{ 'mm.courses.searchcoursesadvice' | translate }}</p>
             </mm-empty-box>
+            <!-- <div class="card">
+                <a class="item item-text-wrap item-icon-right item-borderless item-course">
+
+
+                </a>
+            </div> -->
+
         </mm-loading>
     </ion-content>
 </ion-view>
