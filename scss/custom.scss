@@ -3,9 +3,9 @@
 
 // App
 html {
-	font-size: 62.5%;	// 10px = 1em
-    line-height: 1.3;	// Default
-	font-weight: 400;   // Normal
+	font-size: 16px;
+    line-height: 1.3;
+	font-weight: 400;
 	font-family: $font-stack;
 	letter-spacing: 0.3px;
 	color: $black;
@@ -29,10 +29,10 @@ a {
 	color: $link;
 }
 
-.button {
+.new-button {
 	width: 100%;
 	padding: 15px;
-	font-size: 1.6em;
+	font-size: 16px;
 	text-align: center;
 	color: $link;
 	background: none;
@@ -53,86 +53,80 @@ a {
 }
 
 .overflow {
-	font-size: 1.6em;
+	font-size: 16px;
 	font-weight: 500;
 	color: $black;
 }
 
 //Navigation
 .navTitle {
-	font-size: 1.7em;
+	font-size: 17px;
 	font-weight: 500;
 	text-align: center;
 	color: $white;
 }
 
 .navButton {
-	font-size: 1.7em;
+	font-size: 17px;
 	font-weight: 500;
 	color: $white;
 }
 
 .navButtonStrong {
-	font-size: 1.7em;
+	font-size: 17px;
 	font-weight: 400;
 	color: $white;
 }
 
 .drawerTitle {
-	font-size: 1.6em;
+	font-size: 16px;
 	font-weight: 500;
-	color: $white;
-}
-
-.drawerSubtitle {
-	font-size: 1.4em;
-	font-weight: 300;
 	color: $white;
 }
 
 // Onboarding
 .tourTitle {
-	font-size: 1.8em;
+	font-size: 18px;
 	font-weight: 500;
 	color: $black;
 }
 
 .progress {
-	font-size: 1.4em;
+	font-size: 14px;
 	color: $grey1;
 }
 
 // Inputs
 .inputLabel {
-	font-size: 1.6em;
+	font-size: 16px;
 	color: $black;
 }
 
 .inputPlaceholder {
-	font-size: 1.4em;
+	font-size: 14px;
 	color: $grey2;
 }
 
 .input {
-	font-size: 1.4em;
+	font-size: 14px;
 	color: $black;
 }
 
 //Screens
 .instruction {
-	font-size: 1.4em;
+	font-size: 14px;
 	text-align: center;
 	color: $grey1;
 }
 
 .cardTitle {
-	font-size: 1.6em;
+	font-size: 16px;
 	font-weight: 500;
 	color: $black;
 }
 
 .list {
-	font-size: 1.6em;
+	font-size: 16px;
 	color: $black;
 
 	&.strong {
@@ -141,27 +135,27 @@ a {
 }
 
 .listDetail {
-	font-size: 1.4em;
+	font-size: 14px;
 	color: $grey2;
 }
 
 .header {
-	font-size: 1.6em;
+	font-size: 14px;
 	color: $black;
 }
 
 .detail {
-	font-size: 1.4em;
+	font-size: 14px;
 	color: $grey1;
 }
 
 .paragraph {
-	font-size: 1.6em;
+	font-size: 16px;
 	color: $black;
 }
 
 .paragraphSmall {
-	font-size: 1.4em;
+	font-size: 14px;
 	color: $black;
 }
 
@@ -174,14 +168,14 @@ a {
 
 // Empty
 .emptyTitle {
-	font-size: 1.6em;
+	font-size: 16px;
 	font-weight: 500;
 	text-align: center;
 	color: $grey2;
 }
 
 .emptySubitle {
-	font-size: 1.4em;
+	font-size: 14px;
 	text-align: center;
 	color: $grey2;
 }
@@ -190,36 +184,255 @@ a {
 /*----------Overrides
 */
 
-.mm-bglogo {
-	background-color: $pearson; /* Change this to add a bg image or change color */
-	background: -webkit-radial-gradient($pearson, $pearsonDark);
-	background: radial-gradient($pearson, $pearsonDark);
-	background-repeat: no-repeat;
-	background-position: center center;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 100%;
-	width: 100%;
-	display: table;
-}
 
-.bar-content,
-.bar-side-menu {
+// Top Navigation
+.bar-content {
 	background-color: $primary;
+	box-shadow: 0 0 3px rgba($black,0.24);
+
+	button.back-button,
+	.button.back-button {
+		width: auto;
+	}
+
+	button.button-icon,
+	.button.button-icon {
+		i {
+			font-size: 24px;
+			line-height: 1.3;
+		}
+	}
+
+	.button,
+	.button-icon,
+	.button-icon.button {
+		&.active,
+		&.activated {
+			color: white;
+			opacity: .64;
+		}
+	}
+
+	.button,
+	.button-icon,
+	.button-icon.button {
+		&.ion-navicon {
+			&.active,
+			&.activated {
+				color: white;
+				opacity: 0.64;
+			}
+		}
+	}
+
 }
 
-.mm-side-menu-left {
+// Side Drawer
+.menu-content {
+	box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.24);
+}
+
+#mm-side-menu-left {
+
+	&.menu {
+		background-color: $primaryDark;
+	}
+
+	.bar {
+		padding: 0;
+	}
+
+	.bar-header {
+		background-color: $primary;
+		border-bottom: 1px solid $primaryDark;
+
+		a {
+			&.activated {
+				background-color: $primaryDarker;
+			}
+		}
+
+		h2 {
+			font-size: 16px;
+			font-weight: 500;
+			color: $white;
+		}
+
+		p span {
+			font-size: 13px;
+			font-weight: 400;
+			color: $white;
+			opacity: 0.64;
+		}
+
+		.item-icon-right .icon {
+			right: 6px;
+		}
+	}
 
 	.item {
-		background: $primary!important;
-		color: $white!important;
-		border-color: $primaryDark!important;
+		border-color: $primaryDark;
 	}
 
 	.item-divider {
-		background: $primaryDark!important;
+		background-color: $primaryDark;
+	}
+
+	.item,
+	.item-content {
+		h2 {
+			font-weight: 500;
+		}
+	}
+
+	.list {
+		.item-divider {
+			background-color: $primaryDark;
+		}
+
+		li {
+			a {
+				background-color: $primary;
+				border-color: $primaryDark;
+				padding-top: 11px;
+				padding-bottom: 11px;
+				font-size: 16px;
+				font-weight: 500;
+				letter-spacing: 0.3px;
+				color: $white;
+
+				.icon {
+					color: $white;
+					font-size: 24px;
+				}
+
+				p {
+					font-size: 13px;
+					font-weight: 400;
+					letter-spacing: 0.6px;
+					color: $white;
+					opacity: 0.64;
+				}
+
+				&.activated {
+					background-color: $primaryDarker;
+				}
+			}
+
+			&.mm-sidemenu-handler {
+				a {
+					padding-top: 6px;
+					padding-bottom: 6px;
+				}
+			}
+
+			.badge-positive {
+				background-color: $error;
+			}
+		}
+	}
+}
+
+// Buttons
+.button {
+	color: $link;
+	border-color: $link;
+
+	&:hover {
+		color: $link;
+	}
+
+	&.activated {
+		border-color: $link;
+		background-color: $link;
+		color: $white;
+	}
+
+	&.button-positive {
+		border-color: $link;
+		background-color: $link;
+
+		&.activated {
+			border-color: $linkDark;
+			background-color: $linkDark;
+		}
+	}
+}
+
+
+// System
+.card,
+.mm-view-content {
+	padding-top: 1px;
+	padding-bottom: 1px;
+	border-radius: 2px;
+	background-color: $white;
+	box-shadow: $shadow;
+
+	.box {
+		border-color: white;
+	}
+
+	h2 {
+		font-weight: 500;
+	}
+}
+
+.item {
+	.icon {
+		font-size: 24px;
+	}
+}
+
+.card {
+	&:first-of-type {
+		margin-top: 0px;
+	}
+}
+
+.action-sheet .button,
+.action-sheet .button .icon {
+	color: $link;
+}
+
+.tabs.tabs-free {
+	.tab-item {
+		color: $primary;
+		opacity: 0.64;
+
+		&.active,
+		&.activated {
+			opacity: 1;
+		}
+	}
+}
+
+
+// Login
+.mm-mm_login_credentials,
+.mm-mm_login_reconnect,
+.mm-mm_login_site {
+	background: -webkit-radial-gradient(white, $grey5);
+    background: radial-gradient(white, $grey5);
+}
+
+.mm-bglogo {
+	background-color: $pearson;
+	background: -webkit-radial-gradient($pearson, $pearsonDark);
+	background: radial-gradient($pearson, $pearsonDark);
+}
+
+.item.item-input.mm-ioninput-password {
+	padding-right: 6px;
+}
+
+.button-clear.button-clear {
+	color: $link;
+}
+
+// Charts
+.progress-chart-container {
+	.progress-doughnut .progress-indicator svg .circle {
+		stroke: $primary;
 	}
 }

@@ -1,7 +1,7 @@
 <ion-view view-title="{{ 'mm.settings.sites' | translate }}">
   <ion-nav-buttons side="secondary">
-      <button class="button button-icon ion-edit" ng-click="toggleDelete()" ng-show='data.hasSites'></button>
-      <button class="button button-icon ion-plus" ng-click="add()"></button>
+      <button class="button button-icon" ng-click="toggleDelete()" ng-show='data.hasSites'><i class="icon-edit"></i></button>
+      <button class="button button-icon" ng-click="add()"><i class="icon-add-circle"></i></button>
   </ion-nav-buttons>
   <ion-content mm-state-class>
       <ion-list show-delete="data.showDelete">

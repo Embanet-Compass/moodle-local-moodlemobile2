@@ -70,7 +70,7 @@ $icon-website: "\e938";
   font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+i {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'Pearson' !important;
   speak: none;
