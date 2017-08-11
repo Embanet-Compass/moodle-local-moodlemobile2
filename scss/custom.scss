@@ -188,23 +188,69 @@ a {
 // Top Navigation
 .bar-content {
 	background-color: $primary;
+	box-shadow: 0 0 3px rgba($black,0.24);
 
 	button.back-button,
 	.button.back-button {
 		width: auto;
 	}
+
+	button.button-icon,
+	.button.button-icon {
+		i {
+			font-size: 24px;
+			line-height: 1.3;
+		}
+	}
+
+	.button,
+	.button-icon,
+	.button-icon.button {
+		&.active,
+		&.activated {
+			color: white;
+			opacity: .64;
+		}
+	}
+
+	.button,
+	.button-icon,
+	.button-icon.button {
+		&.ion-navicon {
+			&.active,
+			&.activated {
+				color: white;
+				opacity: 0.64;
+			}
+		}
+	}
+
 }
 
 // Side Drawer
+.menu-content {
+	box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.24);
+}
+
 #mm-side-menu-left {
 
 	&.menu {
 		background-color: $primaryDark;
 	}
 
+	.bar {
+		padding: 0;
+	}
+
 	.bar-header {
 		background-color: $primary;
 		border-bottom: 1px solid $primaryDark;
+
+		a {
+			&.activated {
+				background-color: $primaryDarker;
+			}
+		}
 
 		h2 {
 			font-size: 16px;
@@ -219,10 +265,8 @@ a {
 			opacity: 0.64;
 		}
 
-		a {
-			.activated {
-				background-color: $primaryDark;
-			}
+		.item-icon-right .icon {
+			right: 6px;
 		}
 	}
 
@@ -232,6 +276,13 @@ a {
 
 	.item-divider {
 		background-color: $primaryDark;
+	}
+
+	.item,
+	.item-content {
+		h2 {
+			font-weight: 500;
+		}
 	}
 
 	.list {
@@ -264,7 +315,7 @@ a {
 				}
 
 				&.activated {
-					background-color: $primaryDark;
+					background-color: $primaryDarker;
 				}
 			}
 
@@ -315,10 +366,27 @@ a {
 	padding-top: 1px;
 	padding-bottom: 1px;
 	border-radius: 2px;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.24);
+	background-color: $white;
+	box-shadow: $shadow;
 
 	.box {
 		border-color: white;
+	}
+
+	h2 {
+		font-weight: 500;
+	}
+}
+
+.item {
+	.icon {
+		font-size: 24px;
+	}
+}
+
+.card {
+	&:first-of-type {
+		margin-top: 0px;
 	}
 }
 
@@ -354,8 +422,8 @@ a {
 	background: radial-gradient($pearson, $pearsonDark);
 }
 
-.mm-ioninput-password {
-	padding-right: 0;
+.item.item-input.mm-ioninput-password {
+	padding-right: 6px;
 }
 
 .button-clear.button-clear {

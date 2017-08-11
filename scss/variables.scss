@@ -16,15 +16,16 @@ $grey3: 		rgb(221,221,221);
 $grey4: 		rgb(238,238,238);
 $grey5: 		rgb(243,243,243);
 
-$linkDark: 		darken($link,10%);
-$pearsonDark: 	darken($pearson,10%);
+$linkDark: 		darken($link,8%);
+$pearsonDark: 	darken($pearson,8%);
 $successLight: 	rgba($success,0.04);
 $disabled:		rgba($white,0.54);
 
 // School Colors
 $secondary: rgb(204,0,0);
 $primary: 	rgb(97,84,69);
-$primaryDark: 	darken($primary,10%);
+$primaryDark: 	darken($primary,8%);
+$primaryDarker: 	darken($primary,12%);
 $primaryLight: 	rgba($primary,0.04);
 
 // Ionic Overrides
@@ -42,6 +43,9 @@ $orange:		$primary;
 
 // Fonts
 $font-stack: 'Helvetica Neue', HelveticaNeue, 'Helvetica', Helvetica, sans-serif;
+
+// Styles
+$shadow: 0 1px 3px rgba($black,0.24);
 
 html,
 body {
