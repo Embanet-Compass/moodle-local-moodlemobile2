@@ -34,18 +34,20 @@ set -e # strong checking
 #
 function update_version {
  local config_file="$(pwd)/config.xml"
+ local config_json="$(pwd)/www/config.json"
  /usr/bin/env ruby <<-EORUBY
 
   require 'rexml/document'
+  require 'json'
   include REXML
 
   config_file = "${config_file}"
+  config_json = "${config_json}"
 
   f = File.new(config_file)
   doc = Document.new(f)
   widget = XPath.first(doc, '/widget')
   version = widget.attributes['version']#.gsub(/\d+$/,${BUILD_NO}.to_s)
-
   puts "Version is #{version}\n"
   puts "Build number is ${BUILD_NO}\n"
 
@@ -55,9 +57,14 @@ function update_version {
 
   doc.write(File.open(config_file,"w"), 2)
 
-  puts "saved to #{config_file}"
+  o = JSON.parse(File.read(config_json))
+  o['versioncode'] = "${BUILD_NO}"
+  File.open(config_json, 'w') do |file|
+    file.write o.to_json
+  end
 
 EORUBY
+
 }
 
 function get_version {
@@ -206,7 +213,6 @@ function publish {
       -notify=false                        \
       -force=true                          \
       -open=nothing                        \
-#      -tags=QA                             \
       "${BINARY_PATH}"
   if [ -z "${HOCKEY_APP_ID}" ] || [ -z "${HOCKEY_API_TOKEN}" ]; then
     echo -e ${RED}"HOCKEY_APP_ID or HOCKEY_API_TOKEN not set. Cannot determine download and config urls${NC}"
@@ -417,9 +423,9 @@ if [ "$BUILD_IOS" == "Y" ]; then
 
   echo -e "Building IPA from Archive..."
   EXPORT_PLIST="$(pwd)/${PROJECT_NAME}.ExportOptions.plist"
-  /usr/libexec/PlistBuddy -c "Add :uploadSymbols bool false" "${EXPORT_PLIST}"
-  /usr/libexec/PlistBuddy -c "Add :uploadBitcode bool false" "${EXPORT_PLIST}"
-  /usr/libexec/PlistBuddy -c "Add :compileBitcode bool false" "${EXPORT_PLIST}"
+  /usr/libexec/PlistBuddy -c "Add :uploadSymbols bool false" "${EXPORT_PLIST}" >/dev/null
+  /usr/libexec/PlistBuddy -c "Add :uploadBitcode bool false" "${EXPORT_PLIST}" >/dev/null
+  /usr/libexec/PlistBuddy -c "Add :compileBitcode bool false" "${EXPORT_PLIST}" >/dev/null
 
   IPA_MODIFIER='adhoc'
 
@@ -438,7 +444,7 @@ if [ "$BUILD_IOS" == "Y" ]; then
 
   if [ -f "${IPA_PATH}" ]; then
     IPA_FILENAME=$(echo -n "${IPA_FILENAME//[[:space:]]/}")
-    IPA_FILENAME="${IPA_FILENAME/.ipa/.$VERSION_STRING($BUILD_NO).$IPA_MODIFIER.$BUILD_TYPE_LOWER.ipa}"
+    IPA_FILENAME="${IPA_FILENAME/.ipa/.$VERSION_STRING.$BUILD_NO.$IPA_MODIFIER.$BUILD_TYPE_LOWER.ipa}"
     IPA_OLD_PATH="${IPA_PATH}"
     IPA_PATH="${IPA_FOLDER}/${IPA_FILENAME}"
     mv "${IPA_OLD_PATH}" "${IPA_PATH}"
@@ -515,7 +521,7 @@ if [ "$BUILD_ANDROID" == "Y" ]; then
   if [ -f "${APK_PATH}" ]; then
     APK_OLD_PATH="${APK_PATH}"
     PROJECT_NAME_NOSPACE="$(echo -n "${PROJECT_NAME//[[:space:]]/}")"
-    APK_PATH="${ROOT_DIR}/builds/${PROJECT_NAME_NOSPACE}.${VERSION_STRING}(${BUILD_NO}).${BUILD_TYPE_LOWER}.apk"
+    APK_PATH="${ROOT_DIR}/builds/${PROJECT_NAME_NOSPACE}.${VERSION_STRING}.${BUILD_NO}.${BUILD_TYPE_LOWER}.apk"
     mv "${APK_OLD_PATH}" "${APK_PATH}"
   else
     echo -e "${RED}archive failed!${NC} archive not found at ${APK_PATH}"
