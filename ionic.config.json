@@ -1,10 +1,12 @@
 {
-  "name": "moodlemobile2",
-  "app_id": "",
+  "name": "Pearson",
+  "app_id": "com.pearson.moodlemobile",
   "watchPatterns": [
     "www/**/*.html",
     "www/build/**/*",
     "www/index.html",
-    "!www/lib/**/*"
-  ]
+    "!www/lib/**/*",
+    "scss/**/*"
+  ],
+  "type": "ionic1"
 }
