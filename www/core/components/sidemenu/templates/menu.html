@@ -22,7 +22,7 @@
                     <img ng-src="{{siteinfo.userpictureurl}}" alt="{{ 'mm.core.pictureof' | translate:{$a: siteinfo.fullname} }}" role="presentation" mm-external-content>
                     <h2>{{siteinfo.fullname}}</h2>
                     <p><mm-format-text watch="true">{{siteinfo.sitename}}</mm-format-text></p>
-                    <i class="icon ion-ios-arrow-right"></i>
+                    <i class="icon icon-disclosure"></i>
                 </a>
             </div>
         </header>
@@ -35,6 +35,7 @@
                     <li ng-repeat="handler in handlers | orderBy:'-priority'" ng-controller="handler.controller" class="mm-sidemenu-handler {{class}}">
                         <a menu-close class="item item-icon-left" ui-sref="{{state}}" title="{{title | translate}}" ng-class="{'item-icon-right': loading}">
                             <i class="icon {{icon}}"></i> {{title | translate}}
+                            <p class="subtitle">Lorem ipsum description</p>
                             <span ng-show="!loading && badge" class="badge badge-positive">{{badge}}</span>
                             <ion-spinner ng-if="loading" class="icon"></ion-spinner>
                         </a>
@@ -42,11 +43,14 @@
                     <li ng-repeat="item in customItems" class="mm-sidemenu-customitem">
                         <a ng-if="item.type != 'embedded'" menu-close class="item item-icon-left" ng-href="{{item.url}}" mm-link in-app="{{item.type == 'inappbrowser'}}" title="{{item.label}}">
                             <i class="icon {{item.icon}}"></i>{{item.label}}
+                            <p class="subtitle">Lorem ipsum description</p>
                         </a>
                         <a ng-if="item.type == 'embedded'" menu-close class="item item-icon-left" ui-sref="site.iframe-view({title: item.label, url: item.url})" title="{{item.label}}">
                             <i class="icon {{item.icon}}"></i>{{item.label}}
+                            <p class="subtitle">Lorem ipsum description</p>
                         </a>
                     </li>
+                    <li class="item item-divider"></li>
                     <li ng-if="showWeb">
                         <a menu-close class="item item-icon-left" ng-href="{{siteinfo.siteurl}}" mm-link auto-login="yes" title="{{ 'mm.sidemenu.website' | translate}}">
                             <i class="icon ion-earth"></i>{{ 'mm.sidemenu.website' | translate}}
@@ -57,15 +61,15 @@
                             <i class="icon ion-help-buoy"></i>{{ 'mm.sidemenu.help' | translate}}
                         </a>
                     </li>
-                    <li class="item item-divider"></li>
                     <li>
                         <a menu-close class="item item-icon-left" ui-sref="site.mm_settings" title="{{ 'mm.sidemenu.appsettings' | translate}}">
-                            <i class="icon ion-gear-b"></i>{{ 'mm.sidemenu.appsettings' | translate}}
+                            <i class="icon icon-settings"></i>{{ 'mm.sidemenu.appsettings' | translate}}
                         </a>
                     </li>
+                    <li class="item item-divider"></li>
                     <li>
                         <a class="item item-icon-left" ng-click="logout()" title="{{ 'mm.sidemenu.changesite' | translate}}">
-                            <i class="icon ion-log-out"></i>{{ logoutLabel | translate}}
+                            <i class="icon icon-sign-out"></i>{{ logoutLabel | translate}}
                         </a>
                     </li>
                 </ul>
