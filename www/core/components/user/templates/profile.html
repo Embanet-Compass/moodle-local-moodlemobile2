@@ -27,9 +27,9 @@
                 </div>
 
                 <a class="item item-icon-left item-icon-right item-text-wrap mm-user-profile-handler {{class}}" ui-sref="site.mm_user-about({courseid: courseId, userid: userId})" title="{{ 'mm.user.details' | translate }}">
-                    <i class="icon ion-person"></i>
+                    <i class="icon icon-student"></i>
                     <h2>{{ 'mm.user.details' | translate }}</h2>
-                    <i class="icon icon-accessory ion-chevron-right"></i>
+                    <i class="icon icon-accessory icon-disclosure"></i>
                 </a>
                 <div class="item text-center" ng-if="isLoadingHandlers">
                     <ion-spinner></ion-spinner>
@@ -37,7 +37,7 @@
                 <a class="item item-icon-right item-text-wrap mm-user-profile-handler {{class}}" ng-class="{'item-icon-left': icon}" ng-repeat="handler in newPageHandlers | orderBy:'-priority' track by $index" ng-controller="handler.controller" ng-click="action($event)" ng-hide="hidden" title="{{ title | translate }}">
                     <i ng-if="icon" class="icon {{icon}}"></i>
                     <h2>{{ title | translate }}</h2>
-                    <i class="icon icon-accessory ion-chevron-right"></i>
+                    <i class="icon icon-accessory icon-disclosure"></i>
                 </a>
 
                 <div class="padding" ng-if="actionHandlers && actionHandlers.length">

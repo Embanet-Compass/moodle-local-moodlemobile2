@@ -1,63 +1,111 @@
 /*----------Icon Font
 */
+$todo: "\e1234";
+$icon-add-circle-outline: "\e900";
+$icon-add-circle: "\e901";
+$icon-add: "\e902";
+$icon-advisor: "\e903";
+$icon-alert-circled: "\e904";
+$icon-alert: "\e905";
+$icon-android-arrow-dropdown: "\e906";
+$icon-android-checkbox-outline-blank: "\e907";
+$icon-android-checkbox-outline: "\e908";
+$icon-android-more-vertical: "\e909";
+$icon-asterisk: "\e90a";
+$icon-bookmark-full: "\e90b";
+$icon-bookmark-outline: "\e90c";
+$icon-briefcase: "\e90d";
+$icon-calendar: "\e90e";
+$icon-call: "\e90f";
+$icon-campus: "\e910";
+$icon-categories-outline: "\e911";
+$icon-categories: "\e912";
+$icon-chatbox: "\e913";
+$icon-checkmark: "\e914";
+$icon-chevron-left: "\e915";
+$icon-chevron-right: "\e916";
+$icon-clock: "\e917";
+$icon-close-circled-outline: "\e918";
+$icon-close-circled: "\e919";
+$icon-close: "\e91a";
+$icon-compose-outline: "\e91b";
+$icon-compose: "\e91c";
+$icon-contacts: "\e91d";
+$icon-courses: "\e91e";
+$icon-credit: "\e91f";
+$icon-diploma: "\e920";
+$icon-down-c: "\e921";
+$icon-earth: "\e922";
+$icon-edit: "\e923";
+$icon-email: "\e924";
+$icon-essentials: "\e925";
+$icon-facebook: "\e926";
+$icon-folder: "\e927";
+$icon-funnel-clear: "\e928";
+$icon-funnel: "\e929";
+$icon-gear-b: "\e92a";
+$icon-help-buoy: "\e92b";
+$icon-home: "\e92c";
+$icon-homework: "\e92d";
+$icon-image: "\e92e";
+$icon-information-circled: "\e92f";
+$icon-information-outline: "\e930";
+$icon-information: "\e931";
+$icon-insights: "\e932";
+$icon-instagram: "\e933";
+$icon-ionic: "\e934";
+$icon-ios-bell: "\e935";
+$icon-ios-chatboxes-outline: "\e936";
+$icon-ios-cloud-download-outline: "\e937";
+$icon-ios-list: "\e938";
+$icon-ios-people: "\e939";
+$icon-ios7-minus-outline: "\e93a";
+$icon-left-b: "\e93b";
+$icon-left-c: "\e93c";
+$icon-link: "\e93d";
+$icon-linkedin: "\e93e";
+$icon-loading: "\e93f";
+$icon-log-out: "\e940";
+$icon-mark-open: "\e941";
+$icon-mark: "\e942";
+$icon-messages: "\e943";
+$icon-minus-circle-outline: "\e944";
+$icon-mood: "\e945";
+$icon-more: "\e946";
+$icon-navicon-menu: "\e947";
+$icon-navicon: "\e948";
+$icon-navigate: "\e949";
+$icon-news: "\e94a";
+$icon-person-stalker: "\e94b";
+$icon-person: "\e94c";
+$icon-pin: "\e94d";
+$icon-program: "\e94e";
+$icon-question-mark-outline: "\e94f";
+$icon-question-mark: "\e950";
+$icon-record: "\e951";
+$icon-refresh: "\e952";
+$icon-reply: "\e953";
+$icon-resources: "\e954";
+$icon-right-b: "\e955";
+$icon-right-c: "\e956";
+$icon-search-strong: "\e957";
+$icon-search: "\e958";
+$icon-share: "\e959";
+$icon-sms: "\e95a";
+$icon-star: "\e95b";
+$icon-stats-bars: "\e95c";
+$icon-status: "\e95d";
+$icon-student: "\e95e";
+$icon-sync: "\e95f";
+$icon-test: "\e960";
+$icon-trash-a: "\e961";
+$icon-trash-b: "\e962";
+$icon-twitter: "\e963";
+$icon-up-b: "\e964";
+$icon-up-c: "\e965";
+$icon-website: "\e966";
+$icon-wifi: "\e967";
 
-$icon-add-circle: "\e900";
-$icon-add: "\e901";
-$icon-advisor: "\e902";
-$icon-alert: "\e903";
-$icon-bookmark-full: "\e904";
-$icon-bookmark: "\e905";
-$icon-calendar: "\e906";
-$icon-call: "\e907";
-$icon-campus: "\e908";
-$icon-categories: "\e909";
-$icon-check-empty: "\e90a";
-$icon-check-full: "\e90b";
-$icon-community: "\e90c";
-$icon-courses: "\e90d";
-$icon-credit: "\e90e";
-$icon-department: "\e90f";
-$icon-diploma: "\e910";
-$icon-disclosure: "\e911";
-$icon-edit: "\e912";
-$icon-email: "\e913";
-$icon-essentials: "\e914";
-$icon-expand-down: "\e915";
-$icon-expand-up: "\e916";
-$icon-facebook: "\e917";
-$icon-filter-clear: "\e918";
-$icon-filter: "\e919";
-$icon-homework: "\e91a";
-$icon-image: "\e91b";
-$icon-insights: "\e91c";
-$icon-instagram: "\e91d";
-$icon-link: "\e91e";
-$icon-linkedin: "\e91f";
-$icon-mark: "\e920";
-$icon-menu: "\e921";
-$icon-messages: "\e922";
-$icon-mood: "\e923";
-$icon-news: "\e924";
-$icon-overflow: "\e925";
-$icon-participant: "\e926";
-$icon-post: "\e927";
-$icon-program: "\e928";
-$icon-remove: "\e929";
-$icon-reply: "\e92a";
-$icon-resources: "\e92b";
-$icon-search: "\e92c";
-$icon-settings: "\e92d";
-$icon-share: "\e92e";
-$icon-sign-out: "\e92f";
-$icon-sms: "\e930";
-$icon-star-empty: "\e931";
-$icon-star-small: "\e932";
-$icon-student: "\e933";
-$icon-students: "\e934";
-$icon-test: "\e935";
-$icon-title: "\e936";
-$icon-twitter: "\e937";
-$icon-website: "\e938";
 
 @font-face {
   font-family: 'Pearson';
@@ -85,6 +133,11 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-add-circle-outline {
+  &:before {
+    content: $icon-add-circle-outline;
+  }
+}
 .icon-add-circle {
   &:before {
     content: $icon-add-circle;
@@ -100,9 +153,39 @@ i {
     content: $icon-advisor;
   }
 }
+.icon-alert-circled {
+  &:before {
+    content: $icon-alert-circled;
+  }
+}
 .icon-alert {
   &:before {
     content: $icon-alert;
+  }
+}
+.icon-android-arrow-dropdown {
+  &:before {
+    content: $icon-android-arrow-dropdown;
+  }
+}
+.icon-android-checkbox-outline-blank {
+  &:before {
+    content: $icon-android-checkbox-outline-blank;
+  }
+}
+.icon-android-checkbox-outline {
+  &:before {
+    content: $icon-android-checkbox-outline;
+  }
+}
+.icon-android-more-vertical {
+  &:before {
+    content: $icon-android-more-vertical;
+  }
+}
+.icon-asterisk {
+  &:before {
+    content: $icon-asterisk;
   }
 }
 .icon-bookmark-full {
@@ -110,9 +193,14 @@ i {
     content: $icon-bookmark-full;
   }
 }
-.icon-bookmark {
+.icon-bookmark-outline {
   &:before {
-    content: $icon-bookmark;
+    content: $icon-bookmark-outline;
+  }
+}
+.icon-briefcase {
+  &:before {
+    content: $icon-briefcase;
   }
 }
 .icon-calendar {
@@ -130,24 +218,69 @@ i {
     content: $icon-campus;
   }
 }
+.icon-categories-outline {
+  &:before {
+    content: $icon-categories-outline;
+  }
+}
 .icon-categories {
   &:before {
     content: $icon-categories;
   }
 }
-.icon-check-empty {
+.icon-chatbox {
   &:before {
-    content: $icon-check-empty;
+    content: $icon-chatbox;
   }
 }
-.icon-check-full {
+.icon-checkmark {
   &:before {
-    content: $icon-check-full;
+    content: $icon-checkmark;
   }
 }
-.icon-community {
+.icon-chevron-left {
   &:before {
-    content: $icon-community;
+    content: $icon-chevron-left;
+  }
+}
+.icon-chevron-right {
+  &:before {
+    content: $icon-chevron-right;
+  }
+}
+.icon-clock {
+  &:before {
+    content: $icon-clock;
+  }
+}
+.icon-close-circled-outline {
+  &:before {
+    content: $icon-close-circled-outline;
+  }
+}
+.icon-close-circled {
+  &:before {
+    content: $icon-close-circled;
+  }
+}
+.icon-close {
+  &:before {
+    content: $icon-close;
+  }
+}
+.icon-compose-outline {
+  &:before {
+    content: $icon-compose-outline;
+  }
+}
+.icon-compose {
+  &:before {
+    content: $icon-compose;
+  }
+}
+.icon-contacts {
+  &:before {
+    content: $icon-contacts;
   }
 }
 .icon-courses {
@@ -160,19 +293,19 @@ i {
     content: $icon-credit;
   }
 }
-.icon-department {
-  &:before {
-    content: $icon-department;
-  }
-}
 .icon-diploma {
   &:before {
     content: $icon-diploma;
   }
 }
-.icon-disclosure {
+.icon-down-c {
   &:before {
-    content: $icon-disclosure;
+    content: $icon-down-c;
+  }
+}
+.icon-earth {
+  &:before {
+    content: $icon-earth;
   }
 }
 .icon-edit {
@@ -190,29 +323,39 @@ i {
     content: $icon-essentials;
   }
 }
-.icon-expand-down {
-  &:before {
-    content: $icon-expand-down;
-  }
-}
-.icon-expand-up {
-  &:before {
-    content: $icon-expand-up;
-  }
-}
 .icon-facebook {
   &:before {
     content: $icon-facebook;
   }
 }
-.icon-filter-clear {
+.icon-folder {
   &:before {
-    content: $icon-filter-clear;
+    content: $icon-folder;
   }
 }
-.icon-filter {
+.icon-funnel-clear {
   &:before {
-    content: $icon-filter;
+    content: $icon-funnel-clear;
+  }
+}
+.icon-funnel {
+  &:before {
+    content: $icon-funnel;
+  }
+}
+.icon-gear-b {
+  &:before {
+    content: $icon-gear-b;
+  }
+}
+.icon-help-buoy {
+  &:before {
+    content: $icon-help-buoy;
+  }
+}
+.icon-home {
+  &:before {
+    content: $icon-home;
   }
 }
 .icon-homework {
@@ -225,6 +368,21 @@ i {
     content: $icon-image;
   }
 }
+.icon-information-circled {
+  &:before {
+    content: $icon-information-circled;
+  }
+}
+.icon-information-outline {
+  &:before {
+    content: $icon-information-outline;
+  }
+}
+.icon-information {
+  &:before {
+    content: $icon-information;
+  }
+}
 .icon-insights {
   &:before {
     content: $icon-insights;
@@ -233,6 +391,51 @@ i {
 .icon-instagram {
   &:before {
     content: $icon-instagram;
+  }
+}
+.icon-ionic {
+  &:before {
+    content: $icon-ionic;
+  }
+}
+.icon-ios-bell {
+  &:before {
+    content: $icon-ios-bell;
+  }
+}
+.icon-ios-chatboxes-outline {
+  &:before {
+    content: $icon-ios-chatboxes-outline;
+  }
+}
+.icon-ios-cloud-download-outline {
+  &:before {
+    content: $icon-ios-cloud-download-outline;
+  }
+}
+.icon-ios-list {
+  &:before {
+    content: $icon-ios-list;
+  }
+}
+.icon-ios-people {
+  &:before {
+    content: $icon-ios-people;
+  }
+}
+.icon-ios7-minus-outline {
+  &:before {
+    content: $icon-ios7-minus-outline;
+  }
+}
+.icon-left-b {
+  &:before {
+    content: $icon-left-b;
+  }
+}
+.icon-left-c {
+  &:before {
+    content: $icon-left-c;
   }
 }
 .icon-link {
@@ -245,14 +448,24 @@ i {
     content: $icon-linkedin;
   }
 }
+.icon-loading {
+  &:before {
+    content: $icon-loading;
+  }
+}
+.icon-log-out {
+  &:before {
+    content: $icon-log-out;
+  }
+}
+.icon-mark-open {
+  &:before {
+    content: $icon-mark-open;
+  }
+}
 .icon-mark {
   &:before {
     content: $icon-mark;
-  }
-}
-.icon-menu {
-  &:before {
-    content: $icon-menu;
   }
 }
 .icon-messages {
@@ -260,9 +473,34 @@ i {
     content: $icon-messages;
   }
 }
+.icon-minus-circle-outline {
+  &:before {
+    content: $icon-minus-circle-outline;
+  }
+}
 .icon-mood {
   &:before {
     content: $icon-mood;
+  }
+}
+.icon-more {
+  &:before {
+    content: $icon-more;
+  }
+}
+.icon-navicon-menu {
+  &:before {
+    content: $icon-navicon-menu;
+  }
+}
+.icon-navicon {
+  &:before {
+    content: $icon-navicon;
+  }
+}
+.icon-navigate {
+  &:before {
+    content: $icon-navigate;
   }
 }
 .icon-news {
@@ -270,19 +508,19 @@ i {
     content: $icon-news;
   }
 }
-.icon-overflow {
+.icon-person-stalker {
   &:before {
-    content: $icon-overflow;
+    content: $icon-person-stalker;
   }
 }
-.icon-participant {
+.icon-person {
   &:before {
-    content: $icon-participant;
+    content: $icon-person;
   }
 }
-.icon-post {
+.icon-pin {
   &:before {
-    content: $icon-post;
+    content: $icon-pin;
   }
 }
 .icon-program {
@@ -290,9 +528,24 @@ i {
     content: $icon-program;
   }
 }
-.icon-remove {
+.icon-question-mark-outline {
   &:before {
-    content: $icon-remove;
+    content: $icon-question-mark-outline;
+  }
+}
+.icon-question-mark {
+  &:before {
+    content: $icon-question-mark;
+  }
+}
+.icon-record {
+  &:before {
+    content: $icon-record;
+  }
+}
+.icon-refresh {
+  &:before {
+    content: $icon-refresh;
   }
 }
 .icon-reply {
@@ -305,14 +558,24 @@ i {
     content: $icon-resources;
   }
 }
+.icon-right-b {
+  &:before {
+    content: $icon-right-b;
+  }
+}
+.icon-right-c {
+  &:before {
+    content: $icon-right-c;
+  }
+}
+.icon-search-strong {
+  &:before {
+    content: $icon-search-strong;
+  }
+}
 .icon-search {
   &:before {
     content: $icon-search;
-  }
-}
-.icon-settings {
-  &:before {
-    content: $icon-settings;
   }
 }
 .icon-share {
@@ -320,24 +583,24 @@ i {
     content: $icon-share;
   }
 }
-.icon-sign-out {
-  &:before {
-    content: $icon-sign-out;
-  }
-}
 .icon-sms {
   &:before {
     content: $icon-sms;
   }
 }
-.icon-star-empty {
+.icon-star {
   &:before {
-    content: $icon-star-empty;
+    content: $icon-star;
   }
 }
-.icon-star-small {
+.icon-stats-bars {
   &:before {
-    content: $icon-star-small;
+    content: $icon-stats-bars;
+  }
+}
+.icon-status {
+  &:before {
+    content: $icon-status;
   }
 }
 .icon-student {
@@ -345,9 +608,9 @@ i {
     content: $icon-student;
   }
 }
-.icon-students {
+.icon-sync {
   &:before {
-    content: $icon-students;
+    content: $icon-sync;
   }
 }
 .icon-test {
@@ -355,9 +618,14 @@ i {
     content: $icon-test;
   }
 }
-.icon-title {
+.icon-trash-a {
   &:before {
-    content: $icon-title;
+    content: $icon-trash-a;
+  }
+}
+.icon-trash-b {
+  &:before {
+    content: $icon-trash-b;
   }
 }
 .icon-twitter {
@@ -365,8 +633,362 @@ i {
     content: $icon-twitter;
   }
 }
+.icon-up-b {
+  &:before {
+    content: $icon-up-b;
+  }
+}
+.icon-up-c {
+  &:before {
+    content: $icon-up-c;
+  }
+}
 .icon-website {
   &:before {
     content: $icon-website;
   }
+}
+.icon-wifi {
+  &:before {
+    content: $icon-wifi;
+  }
+}
+
+
+// Ionic Icons Overrides
+
+.ion-alert-circled:before {
+	font-family: 'Pearson';
+	content: $icon-alert-circled;
+}
+
+.ion-android-arrow-dropdown:before {
+	font-family: 'Pearson';
+	content: $icon-android-arrow-dropdown;
+}
+
+.ion-android-checkbox-outline:before {
+	font-family: 'Pearson';
+	content: $icon-android-checkbox-outline;
+}
+
+.ion-android-checkbox-outline-blank:before {
+	font-family: 'Pearson';
+	content: $icon-android-checkbox-outline-blank;
+}
+
+.ion-android-close:before {
+	font-family: 'Pearson';
+	content: $icon-close;
+}
+
+.ion-android-more-vertical:before,
+.ion-android-more:before {
+	font-family: 'Pearson';
+	content: $icon-android-more-vertical;
+}
+
+.ion-android-refresh:before {
+	font-family: 'Pearson';
+	content: $icon-refresh;
+}
+
+.ion-android-sync:before {
+	font-family: 'Pearson';
+	content: $icon-sync;
+}
+
+.ion-arrow-down:before {
+	font-family: 'Pearson';
+	content: $icon-down-c;
+}
+
+.ion-arrow-left-b:before {
+	font-family: 'Pearson';
+	content: $icon-left-b;
+}
+
+.ion-arrow-left-c:before {
+	font-family: 'Pearson';
+	content: $icon-left-c;
+}
+
+.ion-arrow-right-b:before {
+	font-family: 'Pearson';
+	content: $icon-right-b;
+}
+
+.ion-arrow-right-c:before {
+	font-family: 'Pearson';
+	content: $icon-right-c;
+}
+
+.ion-asterisk:before {
+	font-family: 'Pearson';
+	content: $icon-asterisk;
+}
+
+.ion-bookmark:before {
+	font-family: 'Pearson';
+	content: $icon-bookmark-full;
+}
+
+.ion-briefcase:before {
+	font-family: 'Pearson';
+	content: $icon-briefcase;
+}
+
+.ion-calendar:before {
+	font-family: 'Pearson';
+	content: $todo;
+}
+
+.ion-chatbox:before {
+	font-family: 'Pearson';
+	content: $icon-chatbox;
+}
+
+.ion-checkmark:before {
+	font-family: 'Pearson';
+	content: $icon-checkmark;
+}
+
+.ion-checkmark-rounded:before {
+	font-family: 'Pearson';
+	content: $icon-mark;
+}
+
+.ion-chevron-left:before {
+	font-family: 'Pearson';
+	content: $icon-chevron-left;
+}
+
+.ion-chevron-right:before {
+	font-family: 'Pearson';
+	content: $icon-chevron-right;
+}
+
+.ion-clock:before {
+	font-family: 'Pearson';
+	content: $icon-clock;
+}
+
+.ion-close-circled:before {
+	font-family: 'Pearson';
+	content: $icon-close-circled-outline;
+}
+
+.ion-close-round:before {
+	font-family: 'Pearson';
+	content: $icon-close-circled;
+}
+
+.ion-close:before {
+	font-family: 'Pearson';
+	content: $icon-close;
+}
+
+.ion-compose:before {
+	font-family: 'Pearson';
+	content: $icon-compose;
+}
+
+.ion-earth:before {
+	font-family: 'Pearson';
+	content: $icon-earth;
+}
+
+.ion-edit:before {
+	font-family: 'Pearson';
+	content: $icon-edit;
+}
+
+.ion-filter:before {
+	font-family: 'Pearson';
+	content: $icon-funnel;
+}
+
+.ion-folder:before {
+	font-family: 'Pearson';
+	content: $icon-folder;
+}
+
+.ion-funnel:before {
+	font-family: 'Pearson';
+	content: $icon-funnel;
+}
+
+.ion-gear-b:before {
+	font-family: 'Pearson';
+	content: $icon-gear-b;
+}
+
+.ion-help-buoy:before {
+	font-family: 'Pearson';
+	content: $icon-help-buoy;
+}
+
+.ion-home:before {
+	font-family: 'Pearson';
+	content: $icon-home;
+}
+
+.ion-information:before {
+	font-family: 'Pearson';
+	content: $icon-information;
+}
+
+.ion-information-circled:before {
+	font-family: 'Pearson';
+	content: $icon-information-circled;
+}
+
+.ion-information-outline:before {
+	font-family: 'Pearson';
+	content: $icon-information-outline;
+}
+
+.ion-ionic:before {
+	font-family: 'Pearson';
+	content: $icon-ionic;
+}
+
+.ion-loading-c:before {
+	font-family: 'Pearson';
+	content: $icon-loading;
+}
+
+.ion-log-out:before {
+	font-family: 'Pearson';
+	content: $icon-log-out;
+}
+
+.ion-minus-round:before {
+	font-family: 'Pearson';
+	content: $icon-minus-circle-outline;
+}
+
+.ion-more:before {
+	font-family: 'Pearson';
+	content: $icon-more;
+}
+
+.ion-navicon:before {
+	font-family: 'Pearson';
+	content: $icon-navicon;
+}
+
+.ion-navigate:before {
+	font-family: 'Pearson';
+	content: $icon-navigate;
+}
+
+.ion-person:before {
+	font-family: 'Pearson';
+	content: $icon-person;
+}
+
+.ion-person-stalker:before {
+	font-family: 'Pearson';
+	content: $icon-person-stalker;
+}
+
+.ion-plus:before {
+	font-family: 'Pearson';
+	content: $icon-add;
+}
+
+.ion-pin:before {
+	font-family: 'Pearson';
+	content: $icon-pin;
+}
+
+.ion-qrcode:before {
+	font-family: 'Pearson';
+	content: $todo;
+}
+
+.ion-question-mark:before {
+	font-family: 'Pearson';
+	content: $icon-question-mark;
+}
+
+.ion-record:before {
+	font-family: 'Pearson';
+	content: $icon-record;
+}
+
+.ion-reply:before {
+	font-family: 'Pearson';
+	content: $icon-reply;
+}
+
+.ion-search:before {
+	font-family: 'Pearson';
+	content: $icon-search;
+}
+
+.ion-search-strong:before {
+	font-family: 'Pearson';
+	content: $icon-search-strong;
+}
+
+.ion-stats-bars:before {
+	font-family: 'Pearson';
+	content: $icon-stats-bars;
+}
+
+.ion-trash-a:before {
+	font-family: 'Pearson';
+	content: $icon-trash-a;
+}
+
+.ion-trash-b:before {
+	font-family: 'Pearson';
+	content: $icon-trash-b;
+}
+
+.ion-wifi:before {
+	font-family: 'Pearson';
+	content: $icon-wifi;
+}
+
+.ion-ios-arrow-right:before {
+	font-family: 'Pearson';
+	content: $icon-chevron-right;
+}
+
+.ion-ios7-minus-outline:before {
+	font-family: 'Pearson';
+	content: $icon-ios7-minus-outline;
+}
+
+.ion-ios-bell:before {
+	font-family: 'Pearson';
+	content: $icon-ios-bell;
+}
+
+.ion-ios-chatboxes-outline:before {
+	font-family: 'Pearson';
+	content: $icon-ios-chatboxes-outline;
+}
+
+.ion-ios-cloud-download-outline:before {
+	font-family: 'Pearson';
+	content: $icon-ios-cloud-download-outline;
+}
+
+.ion-ios-list:before {
+	font-family: 'Pearson';
+	content: $icon-ios-list;
+}
+
+.ion-ios-people:before {
+	font-family: 'Pearson';
+	content: $icon-ios-people;
+}
+
+.ion-ios-search-strong:before {
+	font-family: 'Pearson';
+	content: $icon-search;
 }

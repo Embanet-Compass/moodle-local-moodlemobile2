@@ -58,6 +58,13 @@ a {
 	color: $black;
 }
 
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+	background-color: none;
+}
+
+
 //Navigation
 .navTitle {
 	font-size: 17px;
@@ -184,7 +191,6 @@ a {
 /*----------Overrides
 */
 
-
 // Top Navigation
 .bar-content {
 	background-color: $primary;
@@ -222,6 +228,19 @@ a {
 				color: white;
 				opacity: 0.64;
 			}
+		}
+	}
+
+	.hamburger {
+		font-weight: 500;
+
+		&:before {
+			font-size: 18px;
+		}
+
+		span {
+			float: right;
+			margin-left: 6px
 		}
 	}
 
@@ -361,6 +380,12 @@ a {
 
 
 // System
+.pane,
+.view {
+	background: -webkit-radial-gradient($white, $grey5);
+    background: radial-gradient($white, $grey5);
+}
+
 .card,
 .mm-view-content {
 	padding-top: 1px;
@@ -388,6 +413,22 @@ a {
 	&:first-of-type {
 		margin-top: 0px;
 	}
+
+	a.item {
+		background: inherit;
+
+		h2 {
+			color: $primary;
+		}
+	}
+}
+
+.spinner {
+	stroke: $grey3;
+}
+
+.popover.mm-context-menu {
+	top: 24px!important;
 }
 
 .action-sheet .button,
@@ -407,13 +448,25 @@ a {
 	}
 }
 
+.bar .button.button-icon .icon:before,
+.bar .button.button-icon:before,
+.bar .button.button-icon.icon-left:before,
+.bar .button.button-icon.icon-right:before,
+.bar button.button-icon .icon:before,
+.bar button.button-icon:before,
+.bar button.button-icon.icon-left:before,
+.bar button.button-icon.icon-right:before,
+.button.icon:before {
+	font-size: 24px;
+}
+
 
 // Login
 .mm-mm_login_credentials,
 .mm-mm_login_reconnect,
 .mm-mm_login_site {
-	background: -webkit-radial-gradient(white, $grey5);
-    background: radial-gradient(white, $grey5);
+	background: -webkit-radial-gradient($white, $grey5);
+    background: radial-gradient($white, $grey5);
 }
 
 .mm-bglogo {
@@ -436,3 +489,5 @@ a {
 		stroke: $primary;
 	}
 }
+
+
