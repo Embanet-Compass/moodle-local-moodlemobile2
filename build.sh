@@ -85,50 +85,10 @@ local config_file="$(pwd)/../../config.xml"
 EORUBY
 }
 
-function findVersionLink() { /usr/bin/env ruby <<-EORUBY
-
-	require 'net/http'
+function findVersionLinkFromResponse() { /usr/bin/env ruby <<-EORUBY
 	require 'json'
-
-	app_id = "$3"
-	token  = "$HOCKEY_API_TOKEN"
-	version = "$2"
-	link_attribute = "$1"
-
-	uri = URI("https://rink.hockeyapp.net/api/2/apps/#{app_id}/app_versions")
-
-	request = Net::HTTP::Get.new(uri.request_uri)
-	request.initialize_http_header("X-HockeyAppToken" => token)
-
-	response = Net::HTTP.start(uri.host, uri.port, :use_ssl => true) {|http|
-		http.request request
-	}
-
-	versions = JSON.parse(response.body)
-
-	#puts ''
-	#puts '========================================================================'
-	#puts response.body
-	#puts '========================================================================'
-	#puts 'looking for ' + version
-	#puts ''
-
-	matching_versions = versions['app_versions'].select {|h1| h1['version']==version}
-	if matching_versions.count == 1
-		puts matching_versions[0][link_attribute]
-	elsif matching_versions.count == 0
-		# none found
-		puts "(version not found)"
-	else
-		newest = matching_versions[0]
-		matching_versions.each do |this_version|
-			if this_version['timestamp'] > newest['timestamp']
-				newest = this_version
-			end
-		end
-		puts newest[link_attribute]
-	end
-
+	parsed_response = JSON.parse('$1')
+	puts parsed_response['public_url']
 EORUBY
 }
 
@@ -190,36 +150,56 @@ function templatize {
 echo .>/dev/null
 }
 
-
 function publish {
   HOCKEY_APP_ID=$1
   BINARY_PATH=$2
   VERSION=$(get_version)
   ### Uploading to Hockeyapp
   echo -e "--- Uploading to Hockeyapp [Time Elapsed $(($(date +%s) - $STARTTIME))s]"
+  
+		# ipa - optional (required, if dsym is not specified for iOS or Mac), file data of the .ipa for iOS, .app.zip for Mac OS X, or .apk file for Android
+		# dsym - optional, file data of the .dSYM.zip file (iOS and OS X) or mapping.txt (Android); note that the extension has to be .dsym.zip (case-insensitive) for iOS and OS X and the file name has to be mapping.txt for Android.
+		# notes - optional, release notes as Textile or Markdown (after 5k characters notes are truncated)
+		# notes_type - optional, type of release notes:
+		# 	0 - Textile
+		# 	1 - Markdown
+		# notify - optional, notify testers (can only be set with full-access tokens):
+		# 	0 - Don't notify testers
+		# 	1 - Notify all testers that can install this app
+		# 	2 - Notify all testers
+		# status - optional, download status (can only be set with full-access tokens):
+		# 	1: Don't allow users to download or install the version
+		# 	2: Available for download or installation
+		# strategy - optional, replace or add build with same build number
+		# 	add to add the build as a new build to even if it has the same build number (default)
+		# 	replace to replace to a build with the same build number
+		# tags - optional, restrict download to comma-separated list of tags
+		# teams - optional, restrict download to comma-separated list of team IDs; example:
+		# 	12,23,42 with 12, 23, and 42 being the database IDs of your teams
+		# users - optional, restrict download to comma-separated list of user IDs; example:
+		# 	1224,5678 with 1224 and 5678 being the database IDs of your users
+		# mandatory - optional, set version as mandatory:
+		# 	0 - no
+		# 	1 - yes
+		# commit_sha - optional, set to the git commit sha for this build
+		# build_server_url - optional, set to the URL of the build job on your build server
+		# repository_url - optional, set to your source repository
 
-  NOTES_PATH="../../RELEASE_NOTES.md"
-  NOTES_FLAGS=""
-  if [ -f ${NOTES_PATH} ]; then
-     NOTES_FLAGS=" notes_path=${NOTES_PATH} -notes_type=markdown"
-  fi
-
-  #TODO: check if puck installed
-
-  /usr/local/bin/puck ${NOTES_FLAGS}       \
-      -submit=auto                         \
-      -download=true                       \
-      -mandatory=true                      \
-      -notify=false                        \
-      -force=true                          \
-      -open=nothing                        \
-      "${BINARY_PATH}"
+  ADDITIONAL_PARAMS="" # to be used to optionally pass in notes, etc
+  if [ -n "${CI_BUILD_URL}" ]; then ADDITIONAL_PARAMS="${ADDITIONAL_PARAMS} -F \"build_sever_url\"=${CI_BUILD_URL}"; fi
+  UPLOAD_RESPONSE=$(curl \
+    -F "status=2" \
+    -F "notify=0" \
+    -F "ipa=@${BINARY_PATH}" \
+    -H "X-HockeyAppToken: ${HOCKEY_API_TOKEN}" \
+    ${ADDITIONAL_PARAMS} https://rink.hockeyapp.net/api/2/apps/${HOCKEY_APP_ID}/app_versions/upload)
+  PUBLIC_URL=$(findVersionLinkFromResponse "${UPLOAD_RESPONSE}")
   if [ -z "${HOCKEY_APP_ID}" ] || [ -z "${HOCKEY_API_TOKEN}" ]; then
     echo -e ${RED}"HOCKEY_APP_ID or HOCKEY_API_TOKEN not set. Cannot determine download and config urls${NC}"
   else
-    echo -e Download url: ${BWHITE}$(findVersionLink "download_url" "$VERSION" "$HOCKEY_APP_ID")${NC} && \
-    echo Config url:   $(findVersionLink "config_url" "$VERSION" "$HOCKEY_APP_ID")
-  fi
+    echo -e Download url: ${BWHITE}${PUBLIC_URL}${NC}
+    #echo Config url:   $(findVersionLink "config_url" "$VERSION" "$HOCKEY_APP_ID")
+  fi  
 }
 
 function showHelp() {
@@ -303,8 +283,7 @@ BUILD_NO=$(git rev-list HEAD --count)
 
 VERSION_INFO=$(update_version)
 echo -e "${YELLOW}${VERSION_INFO}${NC}"
-grep -o -E '[0-9]+\.[0-9]+\.[0-9]+' <<< ${VERSION_INFO}
-echo ${VERSION_STRING}
+VERSION_STRING=$(grep -o -E '[0-9]+\.[0-9]+\.[0-9]+' <<< ${VERSION_INFO})
 if [ "${PUBLISH}" == "Y" ]; then
   adjustApiEndpoint
 fi
@@ -346,9 +325,9 @@ fi
 ### Build
 echo -e "--- Build [Time Elapsed $(($(date +%s) - $STARTTIME))s]"
 
-/usr/local/bin/gulp sass     # perform sass compiling
+#/usr/local/bin/gulp sass     # perform sass compiling
 #/usr/local/bin/gulp build   # does pre-build gulp stuff like minify
-
+gulp sass
 
 #TODO: echo out all the build parameters
 
@@ -449,7 +428,6 @@ if [ "$BUILD_IOS" == "Y" ]; then
   IPA_PATH="${IPA_FOLDER}/${IPA_FILENAME}"
   /usr/libexec/PlistBuddy -c "Add :method string ad-hoc" "${EXPORT_PLIST}"
   xcodebuild -exportArchive -exportOptionsPlist "${EXPORT_PLIST}" -archivePath "${ARCHIVE_PATH}" -exportPath "${IPA_FOLDER}" PROVISIONING_PROFILE_SPECIFIER="${PROVISIONING_PROFILE_NAME}" >> "$BUILD_OUT"  2>&1
-
   if [ -f "${IPA_PATH}" ]; then
     IPA_FILENAME=$(echo -n "${IPA_FILENAME//[[:space:]]/}")
     IPA_FILENAME="${IPA_FILENAME/.ipa/.$VERSION_STRING.$BUILD_NO.$IPA_MODIFIER.$BUILD_TYPE_LOWER.ipa}"
@@ -522,7 +500,7 @@ if [ "$BUILD_ANDROID" == "Y" ]; then
 
     exit
   else
-        echo -e "Success!"
+        echo -e "${GREEN}Success!${NC}"
   fi
 
 
@@ -555,7 +533,7 @@ if [ "$BUILD_ANDROID" == "Y" ]; then
     fi
   else
     echo -e ""
-    echo -e "APK not created at ${APK_PATH}"
+    echo -e "${RED}APK not created at ${APK_PATH}${NC}"
     echo -e ""
   fi
 
