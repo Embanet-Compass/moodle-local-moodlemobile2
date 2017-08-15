@@ -15,13 +15,17 @@ machine:
 ## Setup dependencies
 dependencies:
   pre:
+    - wget -O "$HOME/android-sdk.zip" "https://dl.google.com/android/repository/sdk-tools-darwin-3859397.zip" #"$SDK_URL"
+    - mkdir "/home/ubuntu/android-sdk.tmp"
+    - unzip -d $ANDROID_HOME $HOME/android-sdk.zip > /dev/null
     - npm install -g ionic cordova
     - echo y | android update sdk --no-ui --all --filter tools,platform-tools,extra-google-m2repository,extra-google-google_play_services,extra-android-support,extra-android-m2repository,android-25
     - echo y | android update sdk --no-ui --all --filter build-tools-25.0.0
 
   cache_directories:
-    - /usr/local/android-sdk-linux/tools
-    - /usr/local/android-sdk-linux/build-tools/24.0.1
+    - $ANDROID_HOME
+    #- /usr/local/android-sdk-linux/tools
+    #- /usr/local/android-sdk-linux/build-tools/24.0.1
 
 compile:
 
