@@ -9,7 +9,7 @@ machine:
   ruby:
     version: 2.1.2
   environment:
-    ANDROID_HOME: /usr/local/android-sdk-linux
+    ANDROID_HOME: /usr/local/share/android-sdk 
 
 
 ## Setup dependencies
