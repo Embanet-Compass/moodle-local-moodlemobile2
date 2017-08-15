@@ -19,7 +19,7 @@ dependencies:
     #- wget -O "$HOME/android-sdk.zip" "https://dl.google.com/android/repository/sdk-tools-darwin-3859397.zip" #"$SDK_URL"
     - curl -o "$HOME/android-sdk.zip" "https://dl.google.com/android/repository/sdk-tools-darwin-3859397.zip" #"$SDK_URL"
     - unzip -d $ANDROID_HOME $HOME/android-sdk.zip > /dev/null
-    - echo y | sdkmanager "tools"platform-tools"extra-google-m2repository"extra-google-google_play_services"extra-android-support"extra-android-m2repository"android-25"
+    - echo y | sdkmanager "tools;platform-tools;extra-google-m2repository;extra-google-google_play_services;extra-android-support;extra-android-m2repository;android-25"
     - echo y | sdkmanager "build-tools-25.0.0"
     - npm install -g ionic cordova
 
