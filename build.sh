@@ -303,7 +303,7 @@ BUILD_NO=$(git rev-list HEAD --count)
 
 VERSION_INFO=$(update_version)
 echo -e "${YELLOW}${VERSION_INFO}${NC}"
-VERSION_STRING=$(grep -o '\d\+\.\d\+\.\d\+' <<< ${VERSION_INFO})
+grep -o -E '[0-9]+\.[0-9]+\.[0-9]+' <<< ${VERSION_INFO}
 echo ${VERSION_STRING}
 if [ "${PUBLISH}" == "Y" ]; then
   adjustApiEndpoint
@@ -316,8 +316,10 @@ echo -e "use ${BWHITE}tail -f ${BUILD_OUT}${NC} to view the output."
 ### Install dependencies
 echo -e "--- Install dependencies [Time Elapsed $(($(date +%s) - $STARTTIME))s]"
 
-/usr/local/bin/npm install  >> ${BUILD_OUT} 2>&1
-/usr/local/bin/bower install  >> ${BUILD_OUT} 2>&1
+#/usr/local/bin/npm install  >> ${BUILD_OUT} 2>&1
+#/usr/local/bin/bower install  >> ${BUILD_OUT} 2>&1
+npm install  >> ${BUILD_OUT} 2>&1
+bower install  >> ${BUILD_OUT} 2>&1
 
 ### Restore ionic platforms
 echo -e "--- Restore ionic platforms [Time Elapsed $(($(date +%s) - $STARTTIME))s]"
