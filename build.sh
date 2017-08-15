@@ -234,6 +234,7 @@ function showHelp() {
     echo ' -android     build only android'
     echo ' -ios         build only ios'
     echo ' -debug_build display all script output for debugging this build script'
+    echo ' -ci          build is being done on CI server'
     echo ''
     echo 'By default, both android and ios builds are produced in non-release and are not published to Hockey'
     echo ''
@@ -242,7 +243,6 @@ function showHelp() {
     echo ''
 }
 
-BUILD_OUT=$(mktemp)
 ROOT_DIR="$(pwd)"
 
 PUBLISH="N"
@@ -251,6 +251,7 @@ BUILD_ANDROID="Y"
 DEBUG_BUILD="N"
 INSTALL="N"
 BUILD_TYPE="Release"
+IS_CISERVER="N"
 IS_RELEASE="N"
 PRIVATE_REPO_FOLDER="${PWD##*/}-private"
 XCODE_PROFILE_FOLDER="~/Library/MobileDevice/Provisioning Profiles/"
@@ -272,6 +273,7 @@ for var in "$@"; do
     if [ "$var" == "-debug" ]; then BUILD_TYPE="Debug"; fi
     if [ "$var" == "-install" ]; then INSTALL="Y"; fi
     if [ "$var" == "-release" ]; then IS_RELEASE="Y"; fi
+    if [ "$var" == "-ci" ]; then IS_CISERVER="Y"; fi
     if [ "$var" == "-?" ]; then showHelp; exit; fi
     if [ "$var" == "--help" ]; then showHelp; exit; fi
     if [ "$var" == "-help" ]; then showHelp; exit; fi
@@ -284,10 +286,14 @@ if [ -z "$BUILD_ANDROID_EXP" ] && [ -n "$BUILD_IOS_EXP" ]; then
   BUILD_ANDROID="N"
 fi
 
-if [ "$DEBUG_BUILD" == "Y" ]; then
+if [ "$DEBUG_BUILD" == "Y" ] || [ "$IS_CISERVER" == "Y" ]; then
   BUILD_OUT="/dev/stdout"
+  DEBUG_BUILD="Y"
   set -x
+else
+	BUILD_OUT=$(mktemp)
 fi
+
 
 BUILD_TYPE_LOWER=$(echo "$BUILD_TYPE" | tr '[:upper:]' '[:lower:]')
 
