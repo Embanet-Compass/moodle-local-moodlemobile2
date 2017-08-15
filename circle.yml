@@ -15,7 +15,8 @@ machine:
 ## Setup dependencies
 dependencies:
   pre:
-    - wget -O "$HOME/android-sdk.zip" "https://dl.google.com/android/repository/sdk-tools-darwin-3859397.zip" #"$SDK_URL"
+    #- wget -O "$HOME/android-sdk.zip" "https://dl.google.com/android/repository/sdk-tools-darwin-3859397.zip" #"$SDK_URL"
+    - curl -o "$HOME/android-sdk.zip" "https://dl.google.com/android/repository/sdk-tools-darwin-3859397.zip" #"$SDK_URL"
     - mkdir "/home/ubuntu/android-sdk.tmp"
     - unzip -d $ANDROID_HOME $HOME/android-sdk.zip > /dev/null
     - npm install -g ionic cordova
