@@ -58,6 +58,13 @@ a {
 	color: $black;
 }
 
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+	background-color: none;
+}
+
+
 //Navigation
 .navTitle {
 	font-size: 17px;
@@ -184,7 +191,6 @@ a {
 /*----------Overrides
 */
 
-
 // Top Navigation
 .bar-content {
 	background-color: $primary;
@@ -198,7 +204,7 @@ a {
 	button.button-icon,
 	.button.button-icon {
 		i {
-			font-size: 24px;
+			font-size: $font-size;
 			line-height: 1.3;
 		}
 	}
@@ -221,6 +227,21 @@ a {
 			&.activated {
 				color: white;
 				opacity: 0.64;
+			}
+		}
+	}
+
+	.button {
+		&.hamburger {
+			font-weight: 500;
+
+			&.icon:before {
+				font-size: 18px;
+			}
+
+			span {
+				float: right;
+				margin-left: 3px
 			}
 		}
 	}
@@ -359,8 +380,59 @@ a {
 	}
 }
 
+#mm-side-menu-left .list li a p {
+
+}
+
+.item-thumbnail-left > img:first-child,
+.item-thumbnail-left .item-image,
+.item-thumbnail-left .item-content > img:first-child,
+.item-thumbnail-left .item-content .item-image {
+	width: 72px;
+	height: 72px;
+}
+
+.mm-module-buttons {
+	width: inherit;
+	height: inherit;
+	margin: 0;
+
+	button,
+	.button {
+		border: none;
+		color: $link;
+		min-height: $font-size;
+		line-height: 1;
+
+		.icon:before,
+		&.icon:before,
+		&.icon-left:before,
+		&.icon-right:before {
+			line-height: 1;
+			padding: 0;
+			line-height: 1;
+		}
+	}
+
+	.button-icon .icon:before,
+	.button-icon.icon:before {
+		font-size: $font-size;
+		color: $link;
+	}
+}
+
 
 // System
+.pane,
+.view {
+	background: -webkit-radial-gradient($white, $grey5);
+    background: radial-gradient($white, $grey5);
+}
+
+.scroll.padding {
+	padding-top: 0;
+}
+
 .card,
 .mm-view-content {
 	padding-top: 1px;
@@ -378,16 +450,61 @@ a {
 	}
 }
 
+.card,
+.list-inset {
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+
 .item {
+	border-color: $grey3;
+	line-height: 1.4;
+
 	.icon {
-		font-size: 24px;
+		font-size: $font-size;
+	}
+
+	.item-media {
+		min-height: 58px;
+
+		> img:first-child {
+			max-width: $font-size;
+			max-height: $font-size;
+		}
+	}
+}
+
+.item-divider {
+	min-height: 44px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	background-color: $white;
+
+	h2 {
+		color: $primary;
 	}
 }
 
 .card {
 	&:first-of-type {
-		margin-top: 0px;
+		margin-top: 10px;
 	}
+
+	a.item {
+		background: inherit;
+
+		h2 {
+			color: $primary;
+		}
+	}
+}
+
+.spinner {
+	stroke: $grey3;
+}
+
+.popover.mm-context-menu {
+	top: 24px!important;
 }
 
 .action-sheet .button,
@@ -407,13 +524,25 @@ a {
 	}
 }
 
+.bar .button.button-icon .icon:before,
+.bar .button.button-icon:before,
+.bar .button.button-icon.icon-left:before,
+.bar .button.button-icon.icon-right:before,
+.bar button.button-icon .icon:before,
+.bar button.button-icon:before,
+.bar button.button-icon.icon-left:before,
+.bar button.button-icon.icon-right:before,
+.button.icon:before {
+	font-size: $font-size;
+}
+
 
 // Login
 .mm-mm_login_credentials,
 .mm-mm_login_reconnect,
 .mm-mm_login_site {
-	background: -webkit-radial-gradient(white, $grey5);
-    background: radial-gradient(white, $grey5);
+	background: -webkit-radial-gradient($white, $grey5);
+    background: radial-gradient($white, $grey5);
 }
 
 .mm-bglogo {
@@ -430,9 +559,23 @@ a {
 	color: $link;
 }
 
+
 // Charts
 .progress-chart-container {
 	.progress-doughnut .progress-indicator svg .circle {
 		stroke: $primary;
+	}
+}
+
+
+
+// Empty States
+.mm-empty-box {
+	.mm-empty-box-content {
+		.icon,
+		i,
+		p {
+			color: $grey2;
+		}
 	}
 }
