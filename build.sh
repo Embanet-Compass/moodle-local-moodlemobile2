@@ -187,6 +187,8 @@ function publish {
 
   ADDITIONAL_PARAMS="" # to be used to optionally pass in notes, etc
   if [ -n "${CI_BUILD_URL}" ]; then ADDITIONAL_PARAMS="${ADDITIONAL_PARAMS} -F \"build_sever_url\"=${CI_BUILD_URL}"; fi
+  if [ -n "${CIRCLE_BUILD_URL}" ]; then ADDITIONAL_PARAMS="${ADDITIONAL_PARAMS} -F \"build_sever_url\"=${CIRCLE_BUILD_URL}"; fi  
+  
   UPLOAD_RESPONSE=$(curl \
     -F "status=2" \
     -F "notify=0" \
@@ -231,7 +233,7 @@ BUILD_ANDROID="Y"
 DEBUG_BUILD="N"
 INSTALL="N"
 BUILD_TYPE="Release"
-IS_CISERVER="N"
+IS_CISERVER=$(if [[ -n "${CI}" ]]; then echo "Y"; else echo "N"; fi)
 IS_RELEASE="N"
 PRIVATE_REPO_FOLDER="${PWD##*/}-private"
 XCODE_PROFILE_FOLDER="~/Library/MobileDevice/Provisioning Profiles/"
