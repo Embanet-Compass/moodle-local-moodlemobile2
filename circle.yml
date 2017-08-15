@@ -1,7 +1,8 @@
 ## Setup machine
 machine:
-  java:
-    version: 'oraclejdk8'
+  # Setting the Java version is not supported on OSX containers.
+  #java:
+  #  version: 'oraclejdk8'
   node:
     version: v6.10.1
   ruby:
