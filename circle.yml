@@ -10,6 +10,7 @@ machine:
     version: 2.1.2
   environment:
     ANDROID_HOME: /usr/local/share/android-sdk 
+    PATH: "${PATH}:${ANDROID_HOME}"
 
 
 ## Setup dependencies
