@@ -22,10 +22,12 @@ $successLight: 	rgba($success,0.04);
 $disabled:		rgba($white,0.54);
 
 // School Colors
-$secondary: rgb(204,0,0);
-$primary: 	rgb(97,84,69);
+$primary: 		$pearson;
+$secondary: 	rgb(52,51,51);
+// $primary: 	rgb(97,84,69);
+// $secondary:  rgb(204,0,0);
 $primaryDark: 	darken($primary,8%);
-$primaryDarker: 	darken($primary,12%);
+$primaryDarker: darken($primary,12%);
 $primaryLight: 	rgba($primary,0.04);
 
 // Ionic Overrides

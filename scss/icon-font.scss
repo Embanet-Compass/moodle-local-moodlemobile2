@@ -1,6 +1,6 @@
 /*----------Icon Font
 */
-$todo: "\e1234";
+$todo: "";
 $icon-add-circle-outline: "\e900";
 $icon-add-circle: "\e901";
 $icon-add: "\e902";
@@ -80,32 +80,35 @@ $icon-person-stalker: "\e94b";
 $icon-person: "\e94c";
 $icon-pin: "\e94d";
 $icon-program: "\e94e";
-$icon-question-mark-outline: "\e94f";
-$icon-question-mark: "\e950";
-$icon-record: "\e951";
-$icon-refresh: "\e952";
-$icon-reply: "\e953";
-$icon-resources: "\e954";
-$icon-right-b: "\e955";
-$icon-right-c: "\e956";
-$icon-search-strong: "\e957";
-$icon-search: "\e958";
-$icon-share: "\e959";
-$icon-sms: "\e95a";
-$icon-star: "\e95b";
-$icon-stats-bars: "\e95c";
-$icon-status: "\e95d";
-$icon-student: "\e95e";
-$icon-sync: "\e95f";
-$icon-test: "\e960";
-$icon-trash-a: "\e961";
-$icon-trash-b: "\e962";
-$icon-twitter: "\e963";
-$icon-up-b: "\e964";
-$icon-up-c: "\e965";
-$icon-website: "\e966";
-$icon-wifi: "\e967";
+$icon-qrcode: "\e94f";
+$icon-question-mark-outline: "\e950";
+$icon-question-mark: "\e951";
+$icon-record: "\e952";
+$icon-refresh: "\e953";
+$icon-reply: "\e954";
+$icon-resources: "\e955";
+$icon-right-b: "\e956";
+$icon-right-c: "\e957";
+$icon-search-strong: "\e958";
+$icon-search: "\e959";
+$icon-share: "\e95a";
+$icon-sms: "\e95b";
+$icon-star: "\e95c";
+$icon-stats-bars: "\e95d";
+$icon-status: "\e95e";
+$icon-student: "\e95f";
+$icon-sync: "\e960";
+$icon-test: "\e961";
+$icon-trash-a: "\e962";
+$icon-trash-b: "\e963";
+$icon-twitter: "\e964";
+$icon-up-b: "\e965";
+$icon-up-c: "\e966";
+$icon-website: "\e967";
+$icon-wifi: "\e968";
 
+// Font Size
+$font-size: 24px;
 
 @font-face {
   font-family: 'Pearson';
@@ -528,6 +531,11 @@ i {
     content: $icon-program;
   }
 }
+.icon-qrcode {
+  &:before {
+    content: $icon-qrcode;
+  }
+}
 .icon-question-mark-outline {
   &:before {
     content: $icon-question-mark-outline;
@@ -740,12 +748,29 @@ i {
 
 .ion-calendar:before {
 	font-family: 'Pearson';
-	content: $todo;
+	content: $icon-calendar;
 }
 
-.ion-chatbox:before {
+.ion-chatboxes:before,
+.ion-chatbubbles:before,
+.ion-ios-chatboxes,
+.ion-ios-chatboxes-outline,
+.ion-ios-chatbubble,
+.ion-ios-chatbubble-outline {
+	font-family: 'Pearson';
+	content: $icon-messages;
+}
+
+.ion-chatbox:before,
+.ion-chatbox-working:before {
 	font-family: 'Pearson';
 	content: $icon-chatbox;
+}
+
+.ion-chatbubble:before,
+.ion-chatbubble-working:before {
+	font-family: 'Pearson';
+	content: $icon-sms;
 }
 
 .ion-checkmark:before {
@@ -753,7 +778,7 @@ i {
 	content: $icon-checkmark;
 }
 
-.ion-checkmark-rounded:before {
+.ion-checkmark-round:before {
 	font-family: 'Pearson';
 	content: $icon-mark;
 }
@@ -875,7 +900,12 @@ i {
 
 .ion-navicon:before {
 	font-family: 'Pearson';
-	content: $icon-navicon;
+  content: $icon-navicon;
+}
+
+.hamburger.ion-navicon:before {
+	font-family: 'Pearson';
+  content: $icon-navicon-menu;
 }
 
 .ion-navigate:before {
@@ -893,7 +923,8 @@ i {
 	content: $icon-person-stalker;
 }
 
-.ion-plus:before {
+.ion-plus:before,
+.ion-plus-round:before {
 	font-family: 'Pearson';
 	content: $icon-add;
 }
@@ -905,7 +936,7 @@ i {
 
 .ion-qrcode:before {
 	font-family: 'Pearson';
-	content: $todo;
+	content: $icon-qrcode;
 }
 
 .ion-question-mark:before {
