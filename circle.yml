@@ -22,6 +22,7 @@ dependencies:
     #- echo y | sdkmanager "tools;platform-tools;extra-google-m2repository;extra-google-google_play_services;extra-android-support;extra-android-m2repository;android-25"
     - echo y | sdkmanager "platform-tools" "build-tools;25.0.2" "extras;android;m2repository" "extras;google;google_play_services"
     - npm install -g ionic cordova
+    - gem install nanaimo
 
   cache_directories:
     - $ANDROID_HOME
