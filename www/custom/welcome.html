@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    <link href="../build/mm.bundle.css" rel="stylesheet">
+    <script src="../lib/ionic/release/js/ionic.bundle.js"></script>
+    <script src="../cordova.js"></script>
+    <script src="../lib/angular-translate/angular-translate.js"></script>
+    <script src="../lib/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+    <script src="../lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="../lib/ydn.db/jsc/ydn.db-dev.js"></script>
+    <script src="../lib/angular-md5/angular-md5.js"></script>
+    <script src="../lib/angular-aria/angular-aria.js"></script>
+    <script src="../lib/moment/min/moment-with-locales.js"></script>
+    <script src="../lib/jszip/dist/jszip.js"></script>
+    <script src="../lib/oclazyload/dist/ocLazyLoad.js"></script>
+    <script src="../lib/ckeditor/ckeditor.js"></script>
+    <script src="../lib/angular-ckeditor/angular-ckeditor.js"></script>
+    <script src="../lib/angular-messages/angular-messages.js"></script>
+    <script src="../lib/chart.js/dist/Chart.js"></script>
+    <script src="../lib/angular-chart.js/dist/angular-chart.min.js"></script>
+    <script src="../build/mm.bundle.js"></script>
+    <link href="../build/custom.css" rel="stylesheet"> <!-- local style changes -->
+    <style></style> <!-- Empty style to make easier to test styles using Inspector. -->
+  </head>
+
+  <body ng-app="mm" class="grade-a platform-browser platform-macintel platform-ready">
+    <ion-nav-view class="view-container" nav-view-transition="ios" nav-view-direction="none" nav-swipe="">
+      <ion-side-menus enable-menu-with-back-views="false" class="pane view" abstract="true" nav-view="active" style="opacity: 1; transform: translate3d(0%, 0px, 0px);">
+        <ion-side-menu-content class="menu-content pane">
+            <ion-nav-bar class="bar-content nav-bar-container" nav-bar-transition="ios" nav-bar-direction="none" nav-swipe="">
+              <ion-nav-back-button class="hide"></ion-nav-back-button>
+              <ion-nav-buttons side="left" class="hide"></ion-nav-buttons>
+              <div class="nav-bar-block" nav-bar="cached">
+                <ion-header-bar class="bar-content bar bar-header" align-title="center">
+                  <button ng-click="$ionicGoBack()" class="button back-button hide buttons button-clear header-item">
+                    <i class="icon ion-ios-arrow-back"></i>
+                    <span class="back-text"><span class="default-title ng-binding">Back</span>
+                    <span class="previous-title hide"></span>
+                  </button>
+                  <div class="buttons buttons-left header-item"><span class="left-buttons">
+                      <button menu-toggle="left" class="button button-icon icon hamburger ion-navicon" aria-label="Toggle menu">
+                        <span>Menu</span>
+                      </button>
+                  </div>
+                  <div class="title title-center header-item"></div>
+                </ion-header-bar>
+              </div>
+              <div class="nav-bar-block" nav-bar="active">
+                <ion-header-bar class="bar-content bar bar-header" align-title="center">
+                  <button ng-click="$ionicGoBack()" class="button back-button hide buttons button-clear header-item">
+                    <i class="icon ion-ios-arrow-back"></i>
+                    <span class="back-text">
+                      <span class="default-title ng-binding">Back</span>
+                      <span class="previous-title hide"></span>
+                    </span>
+                  </button>
+                  <div class="buttons buttons-left header-item">
+                    <span class="left-buttons">
+                        <button class="button button-icon">
+                          <span>Sign Out</span>
+                        </button>
+                    </span>
+                  </div>
+                  <div class="title title-center header-item" style="left: 107px; right: 107px;">Welcome</div>
+                  <div class="buttons buttons-right">
+                    <span class="secondary-buttons">
+                      <a ui-sref="site.mm_searchcourses" ng-if="searchEnabled" class="button button-icon ion-ios-search-strong" href="#/site/mm_searchcourses" style=""></a>
+                    </span>
+                  </div>
+                </ion-header-bar>
+              </div>
+            </ion-nav-bar>
+
+            <ion-nav-view name="site" class="view-container" nav-view-transition="ios" nav-view-direction="none" nav-swipe="">
+              <ion-view view-title="" class="pane" state="" nav-view="active" style="opacity: 1; transform: translate3d(0%, 0px, 0px);">
+                <ion-nav-buttons side="secondary" class="hide"></ion-nav-buttons>
+                <ion-content padding="true" mm-state-class="" class="scroll-content ionic-scroll mm-site_mm_courses has-header">
+                  <div class="scroll" style="transform: translate3d(0px, 0px, 0px) scale(1);">
+                    <div class="mm-loading-content">
+
+                      <!-- Page Content -->
+                      <div class="header-panel">
+                        <div class="header-content">
+                          <img class="app-logo" src="../img/moodle.png" alt="">
+                          <div class="header-label">
+                            <p>Welcome to the Northeastern Illinois University mobile app. Please take a moment to create your profile in order to access all of your courses, advisor support, and helpful resources.</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="card">
+                        <div class="item item-text-wrap item-header">
+                          <h2>Customize your student profile</h2>
+                        </div>
+                        <div class="item item-text-wrap">
+                          <p>Provide some basic details about yourself and your program will us help customize this experience to suit your needs. Privacy settings puts you in full control of what you share with everyone in your program. You can update this information anytime in your profile.</p>
+                        </div>
+                        <div class="item item-button">
+                          <a class="button button-block ng-binding">
+                            Create Password
+                          </a>
+                        </div>
+                      </div>
+                      <!-- /Page Content -->
+
+                    </div>
+                  </div>
+
+                  <div class="scroll-bar scroll-bar-v">
+                    <div class="scroll-bar-indicator" style="transform: translate3d(0px, 0px, 0px) scaleY(0.99645); height: 845px; transform-origin: center bottom 0px;"></div>
+                  </div>
+                </ion-content>
+              </ion-view>
+            </ion-nav-view>
+        </ion-side-menu-content>
+
+        <ion-side-menu side="right" id="mm-side-menu-right" is-enabled="rightSideMenu &amp;&amp; rightSideMenu.show" width="275" class="menu menu-right" style="width: 275px;"></ion-side-menu>
+      </ion-side-menus>
+  </ion-nav-view>
+
+  <div class="backdrop"></div>
+
+</body>
+</html>
