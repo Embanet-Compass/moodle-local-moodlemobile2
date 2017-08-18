@@ -47,8 +47,11 @@
               <span>Back</span>
             </button>
           <ion-title>
-            Sign Up
+            Create Profile
           </ion-title>
+          <button class="button button-strong disabled">
+            <span>Next</span>
+          </button>
         </ion-navbar>
       </ion-header>
     </ion-nav>
@@ -62,28 +65,49 @@
             <!-- Page Content -->
             <div class="header-panel">
               <div class="header-content">
-                <img class="app-logo" src="../img/moodle.png" alt="">
                 <div class="header-label">
-                  <p>Welcome to the Pearson Education mobile app. Get started by entering the student email used when you registered online. If you have not registered, please visit the <a href="#">Registration Page</a>.</p>
+                  <ul>
+                    <li>Step 1 of 3</li>
+                    <li><a href="#">Setup Later</a>
+                  </ul>
                 </div>
               </div>
             </div>
 
             <div class="card">
-              <ion-input class="item item-input item-stacked-label">
-                <ion-label class="ng-binding input-label" aria-label="" id="">Student Email</ion-label>
-                <input type="text" placeholder="Enter" ng-model="" class="ng-pristine ng-valid ng-empty ng-touched" aria-labelledby="" aria-invalid="false">
-              </ion-input>
-              <div class="item item-button">
-                <a class="button button-block">
-                  Sign Up
-                </a>
+              <div class="item item-text-wrap item-header">
+                <h2>Tell us about yourself</h2>
               </div>
-            </div>
-
-            <div class="card no-border center login-detail">
-              <p>Already a member?</p>
-              <a href="">Log In</a>
+              <ion-input class="item item-input item-stacked-label item-onboarding valid">
+                <i class="icon icon-mark"></i>
+                <ion-label class="ng-binding input-label">Motivation</ion-label>
+                <input type="text" placeholder="What's your motivation for enrolling?" value="Value">
+              </ion-input>
+              <ion-input class="item item-input item-stacked-label item-onboarding focus">
+                <i class="icon icon-mark-open"></i>
+                <ion-label class="ng-binding input-label">Profession</ion-label>
+                <input type="text" placeholder="What's your profession?">
+              </ion-input>
+              <ion-input class="item item-input item-stacked-label item-onboarding">
+                <i class="icon icon-mark-open"></i>
+                <ion-label class="ng-binding input-label">Place of Employment</ion-label>
+                <input type="text" placeholder="Where do you work?">
+              </ion-input>
+              <ion-input class="item item-input item-stacked-label item-onboarding">
+                <i class="icon icon-mark-open"></i>
+                <ion-label class="ng-binding input-label">Program Start Date</ion-label>
+                <input type="text" placeholder="When do you start your program?">
+              </ion-input>
+              <ion-input class="item item-input item-stacked-label item-onboarding">
+                <i class="icon icon-mark-open"></i>
+                <ion-label class="ng-binding input-label">Program Start Date</ion-label>
+                <input type="text" placeholder="When do you plant to graduate?">
+              </ion-input>
+              <ion-input class="item item-input item-stacked-label item-onboarding">
+                <i class="icon icon-mark-open"></i>
+                <ion-label class="ng-binding input-label">Current Mood </ion-label>
+                <input type="text" placeholder="How are you feeling?">
+              </ion-input>
             </div>
             <!-- Page Content -->
 
