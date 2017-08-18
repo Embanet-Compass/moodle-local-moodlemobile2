@@ -43,12 +43,15 @@
       <ion-header class="bar-content bar bar-header nav-bar-container">
         <ion-navbar>
           <button class="button back-button button-clear">
-              <i class="icon ion-ios-arrow-back"></i>
-              <span>Back</span>
-            </button>
+            <i class="icon ion-ios-arrow-back"></i>
+            <span>Back</span>
+          </button>
           <ion-title>
-            Sign Up
+            Privacy Settings
           </ion-title>
+          <button class="button nav-strong">
+            <span>Next</span>
+          </button>
         </ion-navbar>
       </ion-header>
     </ion-nav>
@@ -62,29 +65,44 @@
             <!-- Page Content -->
             <div class="header-panel">
               <div class="header-content">
-                <img class="app-logo" src="../img/moodle.png" alt="">
                 <div class="header-label">
-                  <p>Welcome to the Pearson Education mobile app. Get started by entering the student email used when you registered online. If you have not registered, please visit the <a href="#">Registration Page</a>.</p>
+                  <p>Completely control what you share with other students using the app. Having a public profile allows you to easily connect with other students with our built in contacts and messaging. Only students in your program are able to see your public profile.</p>
                 </div>
               </div>
             </div>
 
             <div class="card">
-              <ion-input class="item item-input item-stacked-label">
-                <ion-label class="ng-binding input-label" aria-label="" id="">Student Email</ion-label>
-                <input type="text" placeholder="Enter" ng-model="" class="ng-pristine ng-valid ng-empty ng-touched" aria-labelledby="" aria-invalid="false">
-              </ion-input>
-              <div class="item item-button">
-                <a class="button button-block ng-binding">
-                  Sign Up
-                </a>
+              <div class="item item-text-wrap item-header">
+                <h2>Public Profile</h2>
+              </div>
+              <div class="item item-text-wrap item-toggle-right">
+                <h2>Allow Public Profile</h2>
+                <p class="details">Let other student see you in their contacts and connect with people in your program via messaging.</p>
+                <ion-toggle [(ngModel)]="publicProfile"></ion-toggle>
               </div>
             </div>
 
-            <div class="card no-border center login-detail">
-              <p>Already a member?</p>
-              <a href="">Log In</a>
-            </div>
+            <div class="card">
+                <div class="item item-text-wrap item-header">
+                  <h2>Profile Visibility</h2>
+                </div>
+                <a href="" class="item item-text-wrap item-icon-left item-icon-right">
+                  <i class="icon icon-mark"></i>
+                  <h2>Basic Profile</h2>
+                  <p class="details">Share your photo, email, and program with other students in your program.</p>
+                </a>
+                <a href="" class="item item-text-wrap item-icon-left item-icon-right">
+                  <i class="icon icon-mark-open"></i>
+                  <h2>Full Profile</h2>
+                  <p class="details">Share your entire profile with other students in your program.</p>
+                </a>
+                <a href="" class="item item-text-wrap item-icon-left item-icon-right">
+                  <i class="icon icon-mark-open"></i>
+                  <h2>Let Me Decide</h2>
+                  <p class="details">Customize what you share with other students in your program.</p>
+                  <i class="icon ion-chevron-right"></i>
+                </a>
+              </div>
             <!-- Page Content -->
 
           </div>
