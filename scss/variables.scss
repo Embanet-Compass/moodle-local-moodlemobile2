@@ -29,6 +29,7 @@ $secondary: 	rgb(52,51,51);
 $primaryDark: 	darken($primary,8%);
 $primaryDarker: darken($primary,4%);
 $primaryLight: 	rgba($primary,0.04);
+$linkLight: 	rgba($link,0.04);
 
 // Ionic Overrides
 $light:			$white;
