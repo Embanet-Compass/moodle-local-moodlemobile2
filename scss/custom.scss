@@ -40,6 +40,10 @@ select:-webkit-autofill {
 	background-color: none;
 }
 
+.input-label {
+	color: $black;
+}
+
 .icon-mark,
 a .icon-mark {
 	color: $link;
@@ -172,7 +176,7 @@ a .ion-chevron-right {
 		}
 	}
 
-	.item-input {
+	&.item-input {
 		&.mm-ioninput-password {
 			padding-right: 6px;
 		}
@@ -310,7 +314,7 @@ a .ion-chevron-right {
 		background: none;
 		box-shadow: none;
 
-		&.nav-strong {
+		&.button-strong {
 			font-weight: 500!important;
 		}
 
@@ -583,7 +587,6 @@ a {
 }
 
 // Extras
-
 .item-icon-left .icon:before,
 .item.item-howto.item-icon-left .icon:before,
 .mm-grades-table .item-howto.item-icon-left.itemcenter .icon:before,
@@ -686,9 +689,11 @@ mm-format-text[max-height].mm-text-formatted.mm-shortened,
 			ul {
 				list-style: none;
 				overflow: hidden;
+				margin: -16px;
 
 				li {
 					display: inline;
+					padding: 12px;
 
 					&:first-child {
 						float: left;
@@ -697,6 +702,12 @@ mm-format-text[max-height].mm-text-formatted.mm-shortened,
 
 					&:last-child {
 						float: right;
+						padding-right: 0;
+						padding-left: 0;
+					}
+
+					a {
+						padding: 12px;
 					}
 				}
 			}
@@ -738,8 +749,17 @@ mm-format-text[max-height].mm-text-formatted.mm-shortened,
 
 		.input-label,
 		input {
-			color: $link;
+			color: $grey1;
 			background: none;
+		}
+	}
+
+	&.focus {
+		border-bottom: 2px solid $link;
+
+		.input-label,
+		.icon {
+			color: $link;
 		}
 	}
 
@@ -793,157 +813,4 @@ mm-format-text[max-height].mm-text-formatted.mm-shortened,
 			}
 		}
 	}
-}
-
-
-// Zepin Text Styles
-
-.new-button {
-	width: 100%;
-	padding: 15px;
-	font-size: 16px;
-	text-align: center;
-	color: $link;
-	background: none;
-	border: $border;
-	border-radius: 4px;
-
-	&:active,
-	&.primary {
-		color: $white;
-		background: $link;
-		border: 1px solid $link;
-	}
-
-	&:disabled,
-	&.disabled {
-		opacity: 0.54;
-	}
-}
-
-.overflow {
-	font-size: 16px;
-	font-weight: 500;
-	color: $black;
-}
-
-.navTitle {
-	font-size: 17px;
-	font-weight: 500;
-	text-align: center;
-	color: $white;
-}
-
-.navButton {
-	font-size: 17px;
-	font-weight: 500;
-	color: $white;
-}
-
-.navButtonStrong {
-	font-size: 17px;
-	font-weight: 400;
-	color: $white;
-}
-
-.drawerTitle {
-	font-size: 16px;
-	font-weight: 500;
-	color: $white;
-}
-
-// Onboarding
-.tourTitle {
-	font-size: 18px;
-	font-weight: 500;
-	color: $black;
-}
-
-.progress {
-	font-size: 14px;
-	color: $grey1;
-}
-
-// Inputs
-.inputLabel {
-	font-size: 16px;
-	color: $black;
-}
-
-.inputPlaceholder {
-	font-size: 14px;
-	color: $grey2;
-}
-
-.input {
-	font-size: 14px;
-	color: $black;
-}
-
-//Screens
-.instruction {
-	font-size: 14px;
-	text-align: center;
-	color: $grey1;
-}
-
-.cardTitle {
-	font-size: 16px;
-	font-weight: 500;
-	color: $black;
-}
-
-.list {
-	font-size: 16px;
-	color: $black;
-
-	&.strong {
-		font-weight: 500;
-	}
-}
-
-.listDetail {
-	font-size: 14px;
-	color: $grey2;
-}
-
-.header {
-	font-size: 14px;
-	color: $black;
-}
-
-.detail {
-	font-size: 14px;
-	color: $grey1;
-}
-
-.paragraph {
-	font-size: 16px;
-	color: $black;
-}
-
-.paragraphSmall {
-	font-size: 14px;
-	color: $black;
-}
-
-
-// Community
-
-
-// Resources
-
-
-// Empty
-.emptyTitle {
-	font-size: 16px;
-	font-weight: 500;
-	text-align: center;
-	color: $grey2;
-}
-
-.emptySubitle {
-	font-size: 14px;
-	text-align: center;
-	color: $grey2;
 }
