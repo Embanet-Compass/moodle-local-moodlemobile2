@@ -3,7 +3,8 @@
 
 // Generic Colors
 $pearson: 		rgb(0,135,167);
-$black: 		rgb(0,0,0);
+$pearsonAlt:	rgb(51,51,51);
+$black: 		rgb(24,24,24);
 $white: 		rgb(255,255,255);
 $link: 			rgb(46,157,247);
 $error: 		rgb(221,19,33);
@@ -22,11 +23,15 @@ $successLight: 	rgba($success,0.04);
 $disabled:		rgba($white,0.54);
 
 // School Colors
-$secondary: rgb(204,0,0);
-$primary: 	rgb(97,84,69);
+// Northeastern
+// $primary: 	rgb(97,84,69);
+// $secondary:  rgb(204,0,0);
+$primary: 		$pearson;
+$secondary: 	$pearsonAlt;
 $primaryDark: 	darken($primary,8%);
-$primaryDarker: 	darken($primary,12%);
+$primaryDarker: darken($primary,4%);
 $primaryLight: 	rgba($primary,0.04);
+$linkLight: 	rgba($link,0.04);
 
 // Ionic Overrides
 $light:			$white;
@@ -45,7 +50,8 @@ $orange:		$primary;
 $font-stack: 'Helvetica Neue', HelveticaNeue, 'Helvetica', Helvetica, sans-serif;
 
 // Styles
-$shadow: 0 1px 3px rgba($black,0.24);
+$shadow: 0 1px 2px rgba($black,0.08);
+$border: 1px solid $grey3;
 
 html,
 body {

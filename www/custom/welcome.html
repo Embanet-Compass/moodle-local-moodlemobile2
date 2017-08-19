@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    <link href="../build/mm.bundle.css" rel="stylesheet">
+    <script src="../lib/ionic/release/js/ionic.bundle.js"></script>
+    <script src="../cordova.js"></script>
+    <script src="../lib/angular-translate/angular-translate.js"></script>
+    <script src="../lib/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+    <script src="../lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="../lib/ydn.db/jsc/ydn.db-dev.js"></script>
+    <script src="../lib/angular-md5/angular-md5.js"></script>
+    <script src="../lib/angular-aria/angular-aria.js"></script>
+    <script src="../lib/moment/min/moment-with-locales.js"></script>
+    <script src="../lib/jszip/dist/jszip.js"></script>
+    <script src="../lib/oclazyload/dist/ocLazyLoad.js"></script>
+    <script src="../lib/ckeditor/ckeditor.js"></script>
+    <script src="../lib/angular-ckeditor/angular-ckeditor.js"></script>
+    <script src="../lib/angular-messages/angular-messages.js"></script>
+    <script src="../lib/chart.js/dist/Chart.js"></script>
+    <script src="../lib/angular-chart.js/dist/angular-chart.min.js"></script>
+    <script src="../build/mm.bundle.js"></script>
+    <link href="../build/custom.css" rel="stylesheet"> <!-- local style changes -->
+    <style></style> <!-- Empty style to make easier to test styles using Inspector. -->
+  </head>
+
+  <body ng-app="mm" class="">
+
+    <!-- Side Menu -->
+    <ion-menu>
+        <ion-content>
+          <ion-list>
+            <!-- Side Drawer -->
+          </ion-list>
+        </ion-content>
+    </ion-menu>
+
+    <!-- Top Nav -->
+    <ion-nav>
+      <ion-header class="bar-content bar bar-header nav-bar-container">
+        <ion-navbar>
+          <button class="button">
+            <span>Sign Out</span>
+          </button>
+          <ion-title>
+            Welcome
+          </ion-title>
+        </ion-navbar>
+      </ion-header>
+    </ion-nav>
+
+    <!-- View -->
+    <ion-view class="pane" nav-view="active">
+      <ion-content class="scroll-content ionic-scroll has-header">
+        <div class="scroll">
+          <div class="mm-loading-content">
+
+            <!-- Page Content -->
+            <div class="header-panel">
+              <div class="header-content">
+                <img class="app-logo" src="../img/moodle.png" alt="">
+                <div class="header-label">
+                  <p>Welcome to the Northeastern Illinois University mobile app. Please take a moment to create your profile in order to access all of your courses, advisor support, and helpful resources.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="item item-text-wrap item-header">
+                <h2>Customize your student profile</h2>
+              </div>
+              <div class="item item-text-wrap">
+                <p>Provide some basic details about yourself and your program will us help customize this experience to suit your needs. Privacy settings puts you in full control of what you share with everyone in your program. You can update this information anytime in your profile.</p>
+              </div>
+              <div class="item item-button">
+                <a class="button button-block">
+                  Create Password
+                </a>
+              </div>
+            </div>
+            <!-- Page Content -->
+
+          </div>
+        </div>
+      </ion-content>
+    </ion-view>
+
+</body>
+</html>
