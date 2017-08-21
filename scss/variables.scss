@@ -17,7 +17,6 @@ $grey3: 		rgb(221,221,221);
 $grey4: 		rgb(238,238,238);
 $grey5: 		rgb(243,243,243);
 
-$linkDark: 		darken($link,8%);
 $pearsonDark: 	darken($pearson,8%);
 $successLight: 	rgba($success,0.04);
 $disabled:		rgba($white,0.54);
@@ -32,6 +31,7 @@ $primaryDark: 	darken($primary,8%);
 $primaryDarker: darken($primary,4%);
 $primaryLight: 	rgba($primary,0.04);
 $linkLight: 	rgba($link,0.04);
+$linkDark: 		darken($link,8%);
 
 // Ionic Overrides
 $light:			$white;
