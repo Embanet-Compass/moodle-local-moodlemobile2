@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    <link href="../build/mm.bundle.css" rel="stylesheet">
+    <script src="../lib/ionic/release/js/ionic.bundle.js"></script>
+    <script src="../cordova.js"></script>
+    <script src="../lib/angular-translate/angular-translate.js"></script>
+    <script src="../lib/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+    <script src="../lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="../lib/ydn.db/jsc/ydn.db-dev.js"></script>
+    <script src="../lib/angular-md5/angular-md5.js"></script>
+    <script src="../lib/angular-aria/angular-aria.js"></script>
+    <script src="../lib/moment/min/moment-with-locales.js"></script>
+    <script src="../lib/jszip/dist/jszip.js"></script>
+    <script src="../lib/oclazyload/dist/ocLazyLoad.js"></script>
+    <script src="../lib/ckeditor/ckeditor.js"></script>
+    <script src="../lib/angular-ckeditor/angular-ckeditor.js"></script>
+    <script src="../lib/angular-messages/angular-messages.js"></script>
+    <script src="../lib/chart.js/dist/Chart.js"></script>
+    <script src="../lib/angular-chart.js/dist/angular-chart.min.js"></script>
+    <script src="../build/mm.bundle.js"></script>
+    <link href="../build/custom.css" rel="stylesheet"> <!-- local style changes -->
+    <style></style> <!-- Empty style to make easier to test styles using Inspector. -->
+  </head>
+
+  <body ng-app="mm" class="">
+
+    <!-- Side Menu -->
+    <ion-menu>
+        <ion-content>
+          <ion-list>
+            <!-- Side Drawer -->
+          </ion-list>
+        </ion-content>
+    </ion-menu>
+
+    <!-- Top Nav -->
+    <ion-nav>
+      <ion-header class="bar-content bar bar-header nav-bar-container">
+        <ion-navbar>
+          <button menu-toggle="left" class="button button-icon icon hamburger ion-navicon">
+            <span>Menu</span>
+          </button>
+          <ion-title>
+            Community
+          </ion-title>
+          <button class="button button-strong">
+            <i class="icon icon-search"></i>
+          </button>
+        </ion-navbar>
+      </ion-header>
+    </ion-nav>
+
+    <!-- View -->
+    <ion-view class="pane" nav-view="active">
+      <ion-content class="scroll-content ionic-scroll has-header">
+        <div class="scroll">
+          <div class="mm-loading-content">
+
+            <!-- Page Content -->
+            <div class="button-top">
+              <a class="button">
+                <i class="icon icon-status"></i>
+                Post My Status
+              </a>
+            </div>
+
+            <div class="card community-card">
+              <div class="item item-text-wrap item-icon-left item-icon-right item-user-detail">
+                <img class="icon" src="../img/user-avatar.png" alt="">
+                <h2>First Name Last</h2>
+                <p>A minute ago</p>
+                <a href="#"><i class="icon icon-android-more-vertical"></i></a>
+              </div>
+              <div class="item item-text-wrap item-mood">
+                <p>Feeling Happy <span class="emoji">😀</span></p>
+              </div>
+              <div class="item item-image">
+                <img src="http://via.placeholder.com/400x200" alt="">
+              </div>
+              <div class="item item-text-wrap item-status">
+                <p class="status">Etiam porta sem malesuada magna mollis euismod. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+              </div>
+              <div class="item item-status-actions">
+                <ul>
+                  <li class="like"><a href="#">Like</a></li>
+                  <li class="reply"><a href="#">Reply</a></li>
+                  <li class="subscribe"><a href="#">Subscribe</a></li>
+                </ul>
+              </div>
+              <div class="item item-status-actions item-status-labels">
+                <ul>
+                  <li class="likes-count">X Likes</li>
+                  <li class="comments"><a href="#">Comments (XX)</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card community-card">
+                <div class="item item-text-wrap item-icon-left item-icon-right item-user-detail">
+                  <img class="icon" src="../img/user-avatar.png" alt="">
+                  <h2>First Name Last</h2>
+                  <p>A minute ago</p>
+                  <a href="#"><i class="icon icon-android-more-vertical"></i></a>
+                </div>
+                <div class="item item-text-wrap item-mood">
+                  <p>Feeling Happy <span class="emoji">😀</span></p>
+                </div>
+                <div class="item item-text-wrap item-status">
+                  <p class="status">Etiam porta sem malesuada magna mollis euismod. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+                </div>
+                <div class="item item-status-actions">
+                  <ul>
+                    <li class="like active"><a href="#">Like</a></li>
+                    <li class="reply"><a href="#">Reply</a></li>
+                    <li class="subscribe active"><a href="#">Subscribe</a></li>
+                  </ul>
+                </div>
+                <div class="item item-status-actions item-status-labels">
+                  <ul>
+                    <li class="likes-count">X Likes</li>
+                    <li class="comments"><a href="#">Comments (XX)</a></li>
+                  </ul>
+                </div>
+              </div>
+            <!-- Page Content -->
+
+          </div>
+        </div>
+      </ion-content>
+    </ion-view>
+
+</body>
+</html>

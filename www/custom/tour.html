@@ -42,16 +42,12 @@
     <ion-nav>
       <ion-header class="bar-content bar bar-header nav-bar-container">
         <ion-navbar>
-          <button class="button back-button button-clear">
-              <i class="icon ion-ios-arrow-back"></i>
-              <span>Back</span>
-            </button>
-          <ion-title>
-            Create Profile
-          </ion-title>
-          <button class="button button-strong">
-            <span>Next</span>
+          <button menu-toggle="left" class="button button-icon icon hamburger ion-navicon">
+            <span>Menu</span>
           </button>
+          <ion-title>
+            Page Title
+          </ion-title>
         </ion-navbar>
       </ion-header>
     </ion-nav>
@@ -63,42 +59,26 @@
           <div class="mm-loading-content">
 
             <!-- Page Content -->
-            <div class="header-panel">
-              <div class="header-content">
-                <div class="header-label">
-                  <ul>
-                    <li>Step 3 of 3</li>
-                    <li><a href="#">Setup Later</a>
-                  </ul>
+            <ion-popover class="popover-ios">
+              <div class="popover-wrapper">
+                <div class="popover-arrow"></div>
+                <div class="popover-content">
+                  <div class="popover-viewport">
+                    <div class="item item-text-wrap">
+                      <h2>Main Menu</h2>
+                      <p>Access your main navigation wherever you are in the app. Easily jump to your profile, school resources, student support, courses, community, and calendar.</p>
+                    </div>
+                    <div class="item item-button">
+                      <ul>
+                        <li><a class="button" href="">Previous</a></li>
+                        <li><a class="primary button" href="">Next</a></li>
+                        <li><a class="button" href="">End Tour</a></li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div class="card">
-              <div class="item item-text-wrap item-header">
-                <h2>Link Social Accounts</h2>
-              </div>
-              <a class="item item-text-wrap item-icon-right item-icon-left">
-                <i class="icon icon-facebook"></i>
-                <h2>Facebook</h2>
-                <i class="icon icon-link"></i>
-              </a>
-              <a class="item item-text-wrap item-icon-right item-icon-left">
-                <i class="icon icon-instagram"></i>
-                <h2>Instagram</h2>
-                <i class="icon icon-link"></i>
-              </a>
-              <a class="item item-text-wrap item-icon-right item-icon-left">
-                <i class="icon icon-linkedin"></i>
-                <h2>LinkedIn</h2>
-                <i class="icon icon-link"></i>
-              </a>
-              <a class="item item-text-wrap item-icon-right item-icon-left">
-                <i class="icon icon-twitter"></i>
-                <h2>Twitter</h2>
-                <i class="icon icon-link"></i>
-              </a>
-            </div>
+            </ion-popover>
             <!-- Page Content -->
 
           </div>

@@ -32,6 +32,11 @@ a {
 	text-decoration: none;
 	font-weight: inherit;
 	color: $link;
+	cursor: pointer;
+
+	.icon {
+		color: $link;
+	}
 }
 
 input:-webkit-autofill,
@@ -45,18 +50,18 @@ select:-webkit-autofill {
 }
 
 .icon-mark,
-a .icon-mark {
-	color: $link;
+a .icon.icon-mark {
+	color: $link!important;
 }
 
 .icon-mark-open,
-a .icon-mark-open {
-	color: $grey3;
+a .icon.icon-mark-open {
+	color: $grey3!important;
 }
 
 .icon-chevron-right,
-a .ion-chevron-right {
-	color: $grey2;
+a .icon.ion-chevron-right {
+	color: $grey2!important;
 }
 
 
@@ -69,6 +74,10 @@ a .ion-chevron-right {
 	background-color: $white;
 	background: -webkit-radial-gradient($white, $white);
     background: radial-gradient($white, $white);
+}
+
+.scroll-content {
+	background: $white;
 }
 
 .scroll {
@@ -87,6 +96,7 @@ a .ion-chevron-right {
 .list-inset {
 	margin-top: 10px;
 	margin-bottom: 0px;
+	min-height: 44px;
 }
 
 .item {
@@ -108,35 +118,37 @@ a .ion-chevron-right {
 		}
 	}
 
-	.item-icon-left {
+	&.item-icon-left {
+		padding-left: 54px;
+
 		h2,
 		p {
-			padding-left: 38px;
+			padding-left: 0;
 		}
 
 		.icon {
-			left: 6px;
+			left: 8px;
 		}
 	}
 
-	.item-icon-right {
+	&.item-icon-right {
 		h2,
 		p {
 			padding-right: 38px;
 		}
 
 		.icon {
-			right: 0;
+			right: 6px;
 		}
 	}
 
-	.item-toggle-right {
+	&.item-toggle-right {
 		h2, p {
 			padding-right: 56px;
 		}
 
 		.icon {
-			right: 0;
+			right: 6px;
 		}
 	}
 
@@ -190,12 +202,12 @@ a .ion-chevron-right {
 		}
 	}
 
-	.item-stacked-label .input-label,
-	.item-stacked-label .icon {
+	&.item-stacked-label .input-label,
+	&.item-stacked-label .icon {
 		padding-top: 0;
 	}
 
-	.item-divider {
+	&.item-divider {
 		min-height: 32px;
 		padding-top: 12px;
 		padding-bottom: 12px;
@@ -267,6 +279,20 @@ a .ion-chevron-right {
 					color: $primary;
 				}
 			}
+
+			&.activated {
+				background: $grey4;
+			}
+		}
+
+		&.linked {
+			h2 {
+				color: $success;
+			}
+
+			.icon {
+				color: $success;
+			}
 		}
 	}
 
@@ -334,6 +360,7 @@ a .ion-chevron-right {
 
 			&.icon:before {
 				font-size: 18px;
+				line-height: 1.8!important;
 				padding: 0;
 			}
 
@@ -341,6 +368,10 @@ a .ion-chevron-right {
 				float: right;
 				margin-left: 3px
 			}
+		}
+
+		&:first-of-type {
+			margin-top: 1px;
 		}
 	}
 
@@ -351,6 +382,7 @@ a .ion-chevron-right {
 		&.activated {
 			color: white;
 			opacity: .64;
+			background: none;
 		}
 	}
 
@@ -377,6 +409,21 @@ a .ion-chevron-right {
 .bar button.button-icon.icon-right:before,
 .button.icon:before {
 	font-size: $font-size;
+	line-height: 1.4;
+}
+
+.bar .button.button-icon:before,
+.bar .button .icon:before,
+.bar .button.icon:before,
+.bar .button.icon-left:before,
+.bar .button.icon-right:before,
+.bar button.button-icon:before,
+.bar button .icon:before,
+.bar button.icon:before,
+.bar button.icon-left:before,
+.bar button.icon-right:before {
+	font-size: $font-size;
+	line-height: 1.4;
 }
 
 // Side Drawer
@@ -479,7 +526,7 @@ a .ion-chevron-right {
 
 				.icon {
 					color: $white;
-					font-size: 24px;
+					font-size: $font-size;
 				}
 
 				p {
@@ -516,12 +563,6 @@ a .ion-chevron-right {
 }
 
 // Buttons
-a {
-	.icon {
-		color: $link;
-	}
-}
-
 .button {
 	color: $link;
 	border-color: $link;
@@ -534,6 +575,10 @@ a {
 		border-color: $link;
 		background-color: $link;
 		color: $white;
+
+		.icon {
+			color: $white;
+		}
 	}
 
 	&.button-positive {
@@ -543,6 +588,20 @@ a {
 		&.activated {
 			border-color: $linkDark;
 			background-color: $linkDark;
+		}
+	}
+}
+
+.button-top {
+	padding: 10px;
+	padding-bottom: 0;
+
+	.button {
+		width: 100%;
+
+		.icon {
+			font-size: $font-size;
+			color: $link;
 		}
 	}
 }
@@ -810,6 +869,317 @@ mm-format-text[max-height].mm-text-formatted.mm-shortened,
 				margin-bottom: -8px;
 				padding: 8px;
 				box-shadow: $shadow;
+			}
+		}
+
+		&.activated {
+			.icon {
+				background: $linkDark;
+			}
+		}
+	}
+}
+
+.popover-ios {
+	padding: 10px;
+	padding-top: 20px;
+	width: 100%;
+
+	.popover-content {
+		position: relative;
+		border-radius: 3px;
+		width: 100%;
+		box-sizing: border-box;
+		min-width: 100%;
+		min-height: 64px;
+		max-height: 90%;
+		color: $black;
+		background: $white;
+		box-shadow: $shadow;
+
+		h2 {
+			font-size: 18px;
+			font-weight: 500;
+			letter-spacing: 0.3px;
+		}
+
+		p {
+			color: $grey1;
+			line-height: 1.4;
+			overflow: visible;
+			white-space: initial;
+		}
+
+		ul {
+			width: 100%;
+			font-size: 0;
+			padding: 0 12px 0 0;
+
+			li {
+				display: inline-block;
+				text-align: center;
+				width: 33.33%;
+				padding: 0;
+				margin: 0 2px;
+
+				.button {
+					width: 100%;
+
+					&.activated {
+						a {
+							color: $white;
+						}
+					}
+
+					&.primary {
+						background: $link;
+						color: $white;
+
+						&.activated {
+							background: $linkDark;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.popover-arrow {
+		top: 10px;
+		left: 50%;
+		margin-left: -11px;
+		position: absolute;
+		display: block;
+		overflow: hidden;
+		width: 22px;
+		height: 10px;
+
+		&:after {
+			content: "";
+			left: 3px;
+			top: 3px;
+			border-radius: 2px;
+			position: absolute;
+			z-index: 10;
+			width: 16px;
+			height: 16px;
+			background-color: $white;
+			-webkit-transform: rotate(45deg);
+			transform: rotate(45deg);
+			box-shadow: $shadow;
+			border: 1px solid $grey3;
+		}
+	}
+}
+
+.community-card {
+	.item {
+		&.item-user-detail {
+			padding-left: 64px;
+			padding-bottom: 0;
+
+			img {
+				margin-top: 12px;
+				width: 44px;
+				height: 44px;
+				border-radius: 100px;
+			}
+
+			p {
+				color: $grey2;
+			}
+
+			a {
+				position: absolute;
+				top: 16px;
+				right: 4px;
+				width: 40px;
+				height: 44px;
+
+				.icon {
+					color: $grey2;
+				}
+			}
+		}
+
+		&.item-mood {
+			padding: 8px 12px;
+			padding-bottom: 2px;
+			border-top: 0;
+
+			p {
+				font-weight: 500;
+			}
+		}
+
+		&.item-image {
+			padding: 8px 0;
+			padding-bottom: 10px;
+			border-top: 0;
+
+			img {
+				background: $grey4;
+			}
+		}
+
+		&.item-status {
+			border-top: 0;
+			padding: 4px 12px;
+			padding-bottom: 16px;
+		}
+
+		&.item-status-actions {
+			padding: 10px;
+
+			ul {
+				margin-top: -1px;
+				margin-bottom: 1px;
+
+				li {
+					display: inline-block;
+					margin-top: -3px;
+					margin-bottom: -6px;
+					margin-right: 16px;
+					font-size: 13px;
+					color: $grey2;
+
+					a {
+						color: inherit;
+
+						&:before {
+							float: left;
+							position: relative;
+							font-size: $font-size;
+							margin-top: -9px;
+							margin-right: 4px;
+						}
+					}
+
+					&.like {
+						a:before {
+							content: "\e95d";
+							font-family: 'Pearson';
+							color: $grey2;
+						}
+
+						.active {
+							a:before {
+								content: "\e95d";
+								font-family: 'Pearson';
+							}
+						}
+					}
+
+					&.reply {
+						a:before {
+							content: "\e955";
+							font-family: 'Pearson';
+							color: $grey2;
+						}
+
+						&.active {
+							a:before {
+								content: "\e955";
+								font-family: 'Pearson';
+								color: $grey2;
+							}
+						}
+					}
+
+					&.subscribe {
+						a:before {
+							content: "\e90c";
+							font-family: 'Pearson';
+							color: $grey2;
+						}
+
+						&.active {
+							a:before {
+								content: "\e90b";
+								font-family: 'Pearson';
+							}
+						}
+					}
+
+					&.likes-count {
+						&:before {
+							content: "\e95d";
+							font-family: 'Pearson';
+							color: $grey2;
+							float: left;
+							position: relative;
+							margin-top: -1px;
+							margin-right: 4px;
+						}
+					}
+
+					&.comments {
+						a:after {
+							content: "\e906";
+							font-family: 'Pearson';
+							font-size: 18px;
+							color: $grey2;
+							float: right;
+							margin: -4px 12px 0 -15px;
+						}
+					}
+
+					&.active,
+					&:active {
+						color: $link;
+
+						a:before ,
+						a:after {
+							color: $link;
+						}
+					}
+				}
+			}
+		}
+
+		&.item-status-labels {
+			padding: 0;
+			background: $grey5;
+
+			ul {
+				padding-left: 12px;
+				height: 43px;
+
+				li {
+					display: inline-block;
+					padding: 17px 0;
+					margin-right: 0;
+					width: 50%;
+
+					&.likes-count {
+						text-align: left;
+					}
+
+					&.comments {
+						text-align: right;
+
+						&.active,
+						&:active {
+							color: $grey2;
+
+							a:before,
+							a:after {
+								color: $grey2;
+							}
+						}
+					}
+
+					a {
+						padding: 14px 16px;
+						width: inherit;
+
+						&:before {
+							float: left;
+							position: relative;
+							margin-top: 2px;
+						}
+					}
+				}
 			}
 		}
 	}

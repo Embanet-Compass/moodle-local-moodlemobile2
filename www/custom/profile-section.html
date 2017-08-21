@@ -42,15 +42,14 @@
     <ion-nav>
       <ion-header class="bar-content bar bar-header nav-bar-container">
         <ion-navbar>
-          <button class="button back-button button-clear">
-              <i class="icon ion-ios-arrow-back"></i>
-              <span>Back</span>
+          <button class="button">
+              <span>Cancel</span>
             </button>
           <ion-title>
-            Create Profile
+            Edit Profile
           </ion-title>
           <button class="button button-strong">
-            <span>Next</span>
+            <span>Save</span>
           </button>
         </ion-navbar>
       </ion-header>
@@ -63,41 +62,11 @@
           <div class="mm-loading-content">
 
             <!-- Page Content -->
-            <div class="header-panel">
-              <div class="header-content">
-                <div class="header-label">
-                  <ul>
-                    <li>Step 3 of 3</li>
-                    <li><a href="#">Setup Later</a>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
             <div class="card">
-              <div class="item item-text-wrap item-header">
-                <h2>Link Social Accounts</h2>
-              </div>
-              <a class="item item-text-wrap item-icon-right item-icon-left">
-                <i class="icon icon-facebook"></i>
-                <h2>Facebook</h2>
-                <i class="icon icon-link"></i>
-              </a>
-              <a class="item item-text-wrap item-icon-right item-icon-left">
-                <i class="icon icon-instagram"></i>
-                <h2>Instagram</h2>
-                <i class="icon icon-link"></i>
-              </a>
-              <a class="item item-text-wrap item-icon-right item-icon-left">
-                <i class="icon icon-linkedin"></i>
-                <h2>LinkedIn</h2>
-                <i class="icon icon-link"></i>
-              </a>
-              <a class="item item-text-wrap item-icon-right item-icon-left">
-                <i class="icon icon-twitter"></i>
-                <h2>Twitter</h2>
-                <i class="icon icon-link"></i>
-              </a>
+              <ion-input class="item item-input item-text-wrap item-stacked-label">
+                <ion-label class="ng-binding input-label" aria-label="" id="">Section Title</ion-label>
+                <input type="text" placeholder="Value" ng-model="" class="ng-pristine ng-valid ng-empty ng-touched" aria-labelledby="" aria-invalid="false">
+              </ion-input>
             </div>
             <!-- Page Content -->
 
